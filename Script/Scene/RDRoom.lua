@@ -147,7 +147,7 @@ addLayer = function(world, def) -- 40
 	return layer -- 58
 end -- 40
 _module_0 = Class({ -- 61
-	width = property(function() -- 61
+	sceneWidth = property(function() -- 61
 		return W -- 61
 	end), -- 61
 	offset = property(function() -- 62
@@ -157,7 +157,7 @@ _module_0 = Class({ -- 61
 		return Vec2(100, self.offset) -- 63
 	end), -- 63
 	right = property(function(self) -- 64
-		return Vec2(self.width - 100, self.offset) -- 64
+		return Vec2(self.sceneWidth - 100, self.offset) -- 64
 	end), -- 64
 	addShadowTo = function(self, unit) -- 66
 		local _with_0 = Sprite("Image/shadow1.png") -- 67
@@ -221,7 +221,7 @@ _module_0 = Class({ -- 61
 		for i = -MaxPath, MaxPath do -- 108
 			local _with_0 = self:getLayer(i) -- 109
 			_with_0.z = ZOffset - PathOffset * i -- 110
-		end -- 110
+		end -- 108
 		do -- 112
 			local _tbl_0 = { } -- 112
 			for _index_0 = 1, #layerDefs do -- 112
@@ -263,7 +263,7 @@ _module_0 = Class({ -- 61
 					door, animation, route = self._layers.leftwall, "openL", "left" -- 136
 				elseif RightDoorSensor == sensorTag then -- 137
 					door, animation, route = self._layers.rightwall, "openR", "right" -- 138
-				end -- 138
+				end -- 134
 				local name, enter, targets = Map.getRoute(SceneName, route) -- 139
 				if name then -- 139
 					do -- 140
@@ -312,7 +312,7 @@ _module_0 = Class({ -- 61
 					door, animation = self._layers.leftwall, "closeL" -- 164
 				elseif RightDoorSensor == sensorTag then -- 165
 					door, animation = self._layers.rightwall, "closeR" -- 166
-				end -- 166
+				end -- 162
 				door.opened = false -- 168
 				door.recovery = 1 -- 169
 				door.speed = DoorSpeed -- 170
@@ -333,4 +333,4 @@ _module_0 = Class({ -- 61
 		return Cache:loadAsync("spine:RDRoom") -- 178
 	end -- 178
 }) -- 60
-return _module_0 -- 178
+return _module_0 -- 1

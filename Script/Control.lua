@@ -20,8 +20,8 @@ do -- 7
 		keyboardEnabled = true -- 8
 	else -- 9
 		keyboardEnabled = false -- 9
-	end -- 9
-end -- 9
+	end -- 7
+end -- 7
 Store.keyboardEnabled = keyboardEnabled -- 11
 local playerGroup = Group({ -- 13
 	"player" -- 13
@@ -268,4 +268,4 @@ return Director.entry:addChild((function() -- 149
 	local _with_0 = Node() -- 149
 	_with_0:schedule(keyboardControl) -- 150
 	return _with_0 -- 149
-end)()) -- 150
+end)()) -- 149

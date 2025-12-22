@@ -56,4 +56,4 @@ local StatusBar = Class({ -- 7
 	end -- 28
 }) -- 6
 _module_0 = StatusBar -- 38
-return _module_0 -- 38
+return _module_0 -- 1

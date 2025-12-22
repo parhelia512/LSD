@@ -251,7 +251,7 @@ do -- 103
 	_with_0:setColor(2, 1, Color(0x00ffffff)) -- 107
 	_with_0:setColor(1, 2, Color(0x44ffffff)) -- 108
 	_with_0:setColor(2, 2, Color(0x44ffffff)) -- 109
-end -- 109
+end -- 103
 local node1 = Node() -- 112
 node1.x = 852 -- 112
 node1.y = 250 -- 112
@@ -315,7 +315,7 @@ do -- 145
 		local item = _list_0[_index_0] -- 150
 		item.scaleX = scale * extraScale -- 151
 		item.scaleY = scale * extraScale -- 152
-	end -- 152
+	end -- 150
 	local _list_1 = { -- 153
 		bg, -- 153
 		lsdOS, -- 153
@@ -329,8 +329,8 @@ do -- 145
 		local item = _list_1[_index_0] -- 153
 		item.scaleX = scale -- 154
 		item.scaleY = scale -- 155
-	end -- 155
-end -- 155
+	end -- 153
+end -- 145
 end) -- 146
 return item1 -- 146
 end

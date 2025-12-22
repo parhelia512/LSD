@@ -20,7 +20,7 @@ local TutorialAI = require("Tutorial.AI") -- 4
 local TutorialAction = require("Tutorial.Action").default -- 5
 local LoopTowerA = require("Scene.LoopTowerA") -- 6
 local Config = require("Data.Config") -- 7
-local _anon_func_0 = function(Spine, _with_0) -- 59
+local _anon_func_0 = function(Spine, _with_0) -- 57
 	local _with_1 = Spine("kineticgun") -- 57
 	_with_1.look = "PT" -- 58
 	_with_1.scaleX = 0.2 -- 59
@@ -70,7 +70,7 @@ _module_0 = function() -- 9
 			position = Vec2(x, world.offset), -- 36
 			tutorial = true -- 37
 		}) -- 30
-	end -- 37
+	end -- 29
 	local HUDControl = require("UI.HUDControl") -- 39
 	Director.ui3D:addChild((function() -- 41
 		local _with_0 = HUDControl() -- 41
@@ -97,7 +97,7 @@ _module_0 = function() -- 9
 		local _exp_0 = self.name -- 49
 		if "ninilite" == _exp_0 then -- 49
 			self.decisionTree = "AI:NiniliteIntro" -- 50
-		end -- 50
+		end -- 49
 	end) -- 48
 	threadLoop(function() -- 52
 		local group = Group({ -- 53
@@ -114,7 +114,7 @@ _module_0 = function() -- 9
 						_with_0:setSlot("pistol", _anon_func_0(Spine, _with_0)) -- 57
 					end -- 56
 					return true -- 60
-				end -- 60
+				end -- 55
 			end) -- 55
 			return true -- 61
 		end -- 54
@@ -171,7 +171,7 @@ _module_0 = function() -- 9
 									emit("Tutorial.Weapon") -- 98
 								end -- 93
 								return true -- 99
-							end) -- 99
+							end) -- 92
 						end -- 92
 					end) -- 92
 				end -- 91
@@ -192,13 +192,13 @@ _module_0 = function() -- 9
 								emit("Tutorial.Weapon") -- 107
 							end -- 102
 							return true -- 108
-						end) -- 108
+						end) -- 101
 					end -- 101
 				end) -- 101
 				return _with_1 -- 100
-			end) -- 108
+			end) -- 69
 		end) -- 69
 		return _with_0 -- 66
-	end) -- 108
+	end) -- 63
 end -- 9
-return _module_0 -- 108
+return _module_0 -- 1

@@ -52,7 +52,7 @@ local TextInput = Class((function(args) -- 5
 			sleep(0.5) -- 27
 			cursor.visible = false -- 28
 			return sleep(0.5) -- 29
-		end) -- 29
+		end) -- 25
 	end -- 25
 	cursor.y = label.y -- 31
 	cursor.visible = false -- 32
@@ -132,7 +132,7 @@ local TextInput = Class((function(args) -- 5
 			elseif "Return" == key or "Escape" == key then -- 90
 				_with_0:detachIME() -- 91
 				return inputBox:emit("Inputed", textDisplay) -- 92
-			end -- 92
+			end -- 85
 		end) -- 80
 		_with_0:slot("TextInput", function(txt) -- 94
 			textDisplay = u8.sub(textDisplay, 1, -1 - u8.len(textEditing)) .. txt -- 95
@@ -163,4 +163,4 @@ end), { -- 112
 	end) -- 112
 }) -- 5
 _module_0 = TextInput -- 118
-return _module_0 -- 118
+return _module_0 -- 1

@@ -28,7 +28,7 @@ export default ->
 		player: true
 		name: Config.char
 		faceRight: false
-		position: Vec2 world.width / 2, world.offset
+		position: Vec2 world.sceneWidth / 2, world.offset
 		busy: true
 		base: true
 
@@ -36,7 +36,7 @@ export default ->
 		player: false
 		name: "ninilite"
 		faceRight: false
-		position: Vec2 world.width / 2 + 180, world.offset
+		position: Vec2 world.sceneWidth / 2 + 180, world.offset
 		busy: true
 		base: true
 
@@ -52,11 +52,12 @@ export default ->
 			true
 
 	thread ->
+		sleep 10
 		import "UI.HUDControl"
 		with HUDControl!
 			\addTo Director.ui3D
 			.visible = false
-			sleep 6
+			sleep 1
 			.visible = true
 			\perform Opacity 1, 0, 1
 			emit "HUD.DisplayMove", true

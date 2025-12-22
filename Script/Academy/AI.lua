@@ -21,7 +21,7 @@ _module_0 = function() -- 6
 					if unit.entity.player then -- 13
 						return math.abs(self.x - unit.x) <= 200 and (self.x > unit.x) == self.faceRight -- 14
 					end -- 13
-				end -- 14
+				end -- 12
 				local unit = AI:getNearestUnit("Any") -- 15
 				if unit then -- 15
 					return math.abs(self.x - unit.x) <= 200 and (self.x > unit.x) == self.faceRight -- 16
@@ -38,13 +38,13 @@ _module_0 = function() -- 6
 			Sel({ -- 27
 				Seq({ -- 28
 					Con("fmove key down", function(self) -- 28
-						return not (self.entity.keyLeft and self.entity.keyRight) and ((self.entity.keyLeft and self.faceRight) or (self.entity.keyRight and not self.faceRight)) -- 33
+						return not (self.entity.keyLeft and self.entity.keyRight) and ((self.entity.keyLeft and self.faceRight) or (self.entity.keyRight and not self.faceRight)) -- 29
 					end), -- 28
 					Act("turn") -- 34
 				}), -- 27
 				Seq({ -- 37
 					Con("bmove key down", function(self) -- 37
-						return not (self.entity.keyLeft or self.entity.keyRight) and not (self.entity.keyBLeft and self.entity.keyBRight) and ((self.entity.keyBLeft and not self.faceRight) or (self.entity.keyBRight and self.faceRight)) -- 43
+						return not (self.entity.keyLeft or self.entity.keyRight) and not (self.entity.keyBLeft and self.entity.keyBRight) and ((self.entity.keyBLeft and not self.faceRight) or (self.entity.keyBRight and self.faceRight)) -- 38
 					end), -- 37
 					Act("turn") -- 44
 				}) -- 36
@@ -66,4 +66,4 @@ _module_0 = function() -- 6
 		Act("idle") -- 57
 	}) -- 24
 end -- 6
-return _module_0 -- 58
+return _module_0 -- 1

@@ -23,7 +23,7 @@ _module_0 = Class(HUDControl, { -- 5
 			if Keyboard:isKeyUp("J") or Controller:isButtonUp(0, "a") then -- 13
 				return emit("Skill.Ended") -- 14
 			end -- 13
-		end) -- 14
+		end) -- 10
 	end -- 5
 }) -- 4
-return _module_0 -- 14
+return _module_0 -- 1

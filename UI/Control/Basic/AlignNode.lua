@@ -28,7 +28,7 @@ _module_0 = Class(Node, { -- 12
 			if alignOffset == nil then -- 18
 				alignOffset = Vec2.zero -- 18
 			end -- 18
-		end -- 21
+		end -- 13
 		self.inUI = inUI -- 22
 		self._isRoot = isRoot -- 23
 		if self._isRoot then -- 24
@@ -45,7 +45,7 @@ _module_0 = Class(Node, { -- 12
 						self:emit("AlignLayout", width, height) -- 34
 						return self:eachChild(function(child) -- 35
 							return child:emit("AlignLayout", width, height) -- 36
-						end) -- 36
+						end) -- 35
 					end -- 30
 				end -- 28
 			end) -- 28
@@ -58,8 +58,8 @@ _module_0 = Class(Node, { -- 12
 				self:emit("AlignLayout", width, height) -- 39
 				return self:eachChild(function(child) -- 40
 					return child:emit("AlignLayout", width, height) -- 41
-				end) -- 41
-			end) -- 41
+				end) -- 40
+			end) -- 37
 		else -- 43
 			self.hAlign = hAlign -- 43
 			self.vAlign = vAlign -- 44
@@ -88,8 +88,8 @@ _module_0 = Class(Node, { -- 12
 						self.x = w / 2 + self.alignOffset.x -- 59
 					elseif "Right" == _exp_0 then -- 60
 						self.x = w - self.width / 2 - self.alignOffset.x -- 60
-					end -- 60
-				end -- 60
+					end -- 57
+				end -- 57
 				do -- 61
 					local _exp_0 = self.vAlign -- 61
 					if "Bottom" == _exp_0 then -- 62
@@ -98,16 +98,16 @@ _module_0 = Class(Node, { -- 12
 						self.y = h / 2 + self.alignOffset.y -- 63
 					elseif "Top" == _exp_0 then -- 64
 						self.y = h - self.height / 2 - self.alignOffset.y -- 64
-					end -- 64
-				end -- 64
+					end -- 61
+				end -- 61
 				local newSize = self.size -- 65
 				if oldSize ~= newSize then -- 66
 					local width, height = newSize.width, newSize.height -- 67
 					return self:eachChild(function(child) -- 68
 						return child:emit("AlignLayout", width, height) -- 69
-					end) -- 69
+					end) -- 68
 				end -- 66
-			end) -- 69
+			end) -- 48
 		end -- 24
 	end, -- 12
 	alignLayout = function(self) -- 71
@@ -120,7 +120,7 @@ _module_0 = Class(Node, { -- 12
 			self:emit("AlignLayout", width, height) -- 74
 			return self:eachChild(function(child) -- 75
 				return child:emit("AlignLayout", width, height) -- 76
-			end) -- 76
+			end) -- 75
 		else -- 78
 			local width, height -- 78
 			do -- 78
@@ -129,8 +129,8 @@ _module_0 = Class(Node, { -- 12
 			end -- 78
 			return self:eachChild(function(child) -- 79
 				return child:emit("AlignLayout", width, height) -- 80
-			end) -- 80
+			end) -- 79
 		end -- 72
 	end -- 71
 }) -- 11
-return _module_0 -- 80
+return _module_0 -- 1

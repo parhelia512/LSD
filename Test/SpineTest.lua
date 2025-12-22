@@ -52,10 +52,10 @@ do -- 6
 			Path(scriptPath, "Image"), -- 12
 			Path(scriptPath, "Font") -- 13
 		} -- 8
-		for _index_0 = 1, #_list_0 do -- 14
+		for _index_0 = 1, #_list_0 do -- 8
 			local path = _list_0[_index_0] -- 8
 			Content:insertSearchPath(1, path) -- 15
-		end -- 15
+		end -- 8
 	else -- 16
 		return -- 16
 	end -- 6
@@ -82,7 +82,7 @@ UnitAction:add("fall", { -- 27
 			_with_0.recovery = 0 -- 36
 			sleep(_with_0:play("standUp")) -- 37
 			return _with_0 -- 32
-		end) -- 37
+		end) -- 32
 	end -- 32
 }) -- 26
 UnitAction:add("evade", { -- 40
@@ -113,7 +113,7 @@ UnitAction:add("evade", { -- 40
 			end -- 53
 			sleep(0.3) -- 57
 			return true -- 58
-		end) -- 58
+		end) -- 50
 	end -- 45
 }) -- 39
 UnitAction:add("rush", { -- 61
@@ -144,7 +144,7 @@ UnitAction:add("rush", { -- 61
 			end -- 74
 			sleep(0.3) -- 78
 			return true -- 79
-		end) -- 79
+		end) -- 71
 	end -- 66
 }) -- 60
 local pistolEnd -- 81
@@ -220,8 +220,8 @@ UnitAction:add("idle", { -- 118
 				local _exp_0 = _with_0.lastCompleted -- 125
 				if "melee" == _exp_0 or "pistol" == _exp_0 or "bow" == _exp_0 or "gun1" == _exp_0 or "gun2" == _exp_0 or "gun3" == _exp_0 or "throw" == _exp_0 or "parry" == _exp_0 or "defense" == _exp_0 or "comp" == _exp_0 or "comm" == _exp_0 then -- 126
 					_with_0.recovery = 0.0 -- 127
-				end -- 127
-			end -- 127
+				end -- 125
+			end -- 125
 			_with_0:play("prepare", true) -- 128
 			return function(self) -- 129
 				return not self.onSurface -- 129
@@ -233,13 +233,13 @@ UnitAction:add("idle", { -- 118
 					sleep(3) -- 133
 					sleep(_with_0:play("idle1")) -- 134
 					_with_0:play("idle", true) -- 135
-				end -- 135
+				end -- 132
 			end) -- 132
 			self.data.playIdleSpecial = playIdleSpecial -- 136
 			return function(self) -- 137
 				coroutine.resume(playIdleSpecial) -- 138
 				return not self.onSurface -- 139
-			end -- 139
+			end -- 137
 		end -- 124
 		return _with_0 -- 122
 	end -- 122
@@ -271,7 +271,7 @@ UnitAction:add("fmove", { -- 142
 			end -- 155
 			self.velocityX = moveSpeed * (self.faceRight and move or -move) -- 159
 			return not self.onSurface -- 160
-		end -- 160
+		end -- 152
 	end -- 146
 }) -- 141
 UnitAction:add("keepIdle", { -- 163
@@ -306,7 +306,7 @@ UnitAction:add("idle1", { -- 174
 			_with_0.speed = 1 -- 181
 			sleep(_with_0:play("idle1", false)) -- 182
 			return _with_0 -- 180
-		end) -- 182
+		end) -- 179
 	end -- 179
 }) -- 173
 UnitAction:add("keepMove", { -- 185
@@ -351,7 +351,7 @@ UnitAction:add("bmove", { -- 196
 			end -- 207
 			self.velocityX = moveSpeed * (self.faceRight and -move or move) * 0.5 -- 211
 			return not self.onSurface -- 212
-		end -- 212
+		end -- 204
 	end -- 200
 }) -- 195
 UnitAction:add("jump", { -- 215
@@ -371,7 +371,7 @@ UnitAction:add("jump", { -- 215
 			_with_0.speed = 1 -- 226
 			sleep(_with_0:play("jump", false)) -- 227
 			return _with_0 -- 225
-		end) -- 227
+		end) -- 224
 	end -- 220
 }) -- 214
 UnitAction:add("fallOff", { -- 230
@@ -399,8 +399,8 @@ UnitAction:add("fallOff", { -- 230
 				else -- 247
 					coroutine.yield(false) -- 247
 				end -- 241
-			end -- 247
-		end) -- 247
+			end -- 240
+		end) -- 239
 	end -- 234
 }) -- 229
 Store["AI:NPC"] = Sel({ -- 250
@@ -412,7 +412,7 @@ Store["AI:NPC"] = Sel({ -- 250
 				if unit.entity.player then -- 253
 					return (self.x > unit.x) == self.faceRight -- 254
 				end -- 253
-			end -- 254
+			end -- 252
 			local unit = AI:getNearestUnit("Any") -- 255
 			if unit then -- 255
 				return (self.x > unit.x) == self.faceRight -- 256
@@ -429,13 +429,13 @@ Store["AI:PlayerControl"] = Sel({ -- 265
 		Sel({ -- 267
 			Seq({ -- 268
 				Con("fmove key down", function(self) -- 268
-					return not (self.entity.keyLeft and self.entity.keyRight) and ((self.entity.keyLeft and self.faceRight) or (self.entity.keyRight and not self.faceRight)) -- 273
+					return not (self.entity.keyLeft and self.entity.keyRight) and ((self.entity.keyLeft and self.faceRight) or (self.entity.keyRight and not self.faceRight)) -- 269
 				end), -- 268
 				Act("turn") -- 274
 			}), -- 267
 			Seq({ -- 277
 				Con("bmove key down", function(self) -- 277
-					return not (self.entity.keyLeft or self.entity.keyRight) and not (self.entity.keyBLeft and self.entity.keyBRight) and ((self.entity.keyBLeft and not self.faceRight) or (self.entity.keyBRight and self.faceRight)) -- 283
+					return not (self.entity.keyLeft or self.entity.keyRight) and not (self.entity.keyBLeft and self.entity.keyBRight) and ((self.entity.keyBLeft and not self.faceRight) or (self.entity.keyBRight and self.faceRight)) -- 278
 				end), -- 277
 				Act("turn") -- 284
 			}) -- 276
@@ -556,8 +556,8 @@ getAllFiles = function(path, exts) -- 380
 		_accum_0[_len_0] = file -- 384
 		_len_0 = _len_0 + 1 -- 383
 		::_continue_0:: -- 383
-	end -- 384
-	return _accum_0 -- 384
+	end -- 382
+	return _accum_0 -- 382
 end -- 380
 local fileSet = Set((function() -- 386
 	local _accum_0 = { } -- 386
@@ -570,8 +570,8 @@ local fileSet = Set((function() -- 386
 		local file = _list_0[_index_0] -- 386
 		_accum_0[_len_0] = Path:getName(file) -- 387
 		_len_0 = _len_0 + 1 -- 387
-	end -- 387
-	return _accum_0 -- 387
+	end -- 386
+	return _accum_0 -- 386
 end)()) -- 386
 local includes = { -- 389
 	"char", -- 389
@@ -659,62 +659,62 @@ createScene = function() -- 454
 	Store.world = world -- 458
 	return Director.entry:addChild(world) -- 459
 end -- 454
-local _anon_func_0 = function(Node, Size, _with_1, grabSize, parent) -- 555
+local _anon_func_0 = function(Node, Size, _with_1, grabSize, parent) -- 547
 	local _with_0 = Node() -- 547
 	_with_0.size = Size(grabSize, grabSize) -- 548
 	_with_0:addTo(parent) -- 555
 	return _with_0 -- 547
 end -- 547
-local _anon_func_1 = function(Spine, _with_0, scaleY) -- 567
+local _anon_func_1 = function(Spine, _with_0, scaleY) -- 564
 	local _with_1 = Spine("coldweapon") -- 564
 	_with_1.look = "grenade" -- 565
 	_with_1.scaleX = 0.04 -- 566
 	_with_1.scaleY = 0.04 * scaleY -- 567
 	return _with_1 -- 564
 end -- 564
-local _anon_func_2 = function(Spine, _with_0, scaleY) -- 571
+local _anon_func_2 = function(Spine, _with_0, scaleY) -- 568
 	local _with_1 = Spine("coldweapon") -- 568
 	_with_1.look = "comm" -- 569
 	_with_1.scaleX = 0.06 -- 570
 	_with_1.scaleY = 0.06 * scaleY -- 571
 	return _with_1 -- 568
 end -- 568
-local _anon_func_3 = function(Spine, _with_0, scaleY) -- 575
+local _anon_func_3 = function(Spine, _with_0, scaleY) -- 572
 	local _with_1 = Spine("coldweapon") -- 572
 	_with_1.look = "comp" -- 573
 	_with_1.scaleX = 0.1 -- 574
 	_with_1.scaleY = 0.1 * scaleY -- 575
 	return _with_1 -- 572
 end -- 572
-local _anon_func_4 = function(Spine, _with_0, scaleY) -- 579
+local _anon_func_4 = function(Spine, _with_0, scaleY) -- 576
 	local _with_1 = Spine("coldweapon") -- 576
 	_with_1.look = "shield" -- 577
 	_with_1.scaleX = 0.2 -- 578
 	_with_1.scaleY = 0.2 * scaleY -- 579
 	return _with_1 -- 576
 end -- 576
-local _anon_func_5 = function(Spine, _with_0, scaleY) -- 583
+local _anon_func_5 = function(Spine, _with_0, scaleY) -- 580
 	local _with_1 = Spine("coldweapon") -- 580
 	_with_1.look = "sword" -- 581
 	_with_1.scaleX = 0.2 -- 582
 	_with_1.scaleY = 0.2 * scaleY -- 583
 	return _with_1 -- 580
 end -- 580
-local _anon_func_6 = function(Spine, _with_0, scaleY) -- 587
+local _anon_func_6 = function(Spine, _with_0, scaleY) -- 584
 	local _with_1 = Spine("coldweapon") -- 584
 	_with_1.look = "bow" -- 585
 	_with_1.scaleX = 0.2 -- 586
 	_with_1.scaleY = 0.2 * scaleY -- 587
 	return _with_1 -- 584
 end -- 584
-local _anon_func_7 = function(Spine, _with_0, scaleY) -- 591
+local _anon_func_7 = function(Spine, _with_0, scaleY) -- 588
 	local _with_1 = Spine("kineticgun") -- 588
 	_with_1.look = "PT" -- 589
 	_with_1.scaleX = 0.2 -- 590
 	_with_1.scaleY = 0.2 * scaleY -- 591
 	return _with_1 -- 588
 end -- 588
-local _anon_func_8 = function(Spine, _with_0, scaleY) -- 595
+local _anon_func_8 = function(Spine, _with_0, scaleY) -- 592
 	local _with_1 = Spine("kineticgun") -- 592
 	_with_1.look = "AR" -- 593
 	_with_1.scaleX = 0.2 -- 594
@@ -756,9 +756,9 @@ createUnit = function() -- 472
 				goto _continue_0 -- 487
 			end -- 485
 			::_continue_0:: -- 485
-		end -- 487
+		end -- 484
 		missingAnims = _accum_0 -- 484
-	end -- 487
+	end -- 484
 	do -- 489
 		local _accum_0 = { } -- 489
 		local _len_0 = 1 -- 489
@@ -770,9 +770,9 @@ createUnit = function() -- 472
 				goto _continue_1 -- 492
 			end -- 490
 			::_continue_1:: -- 490
-		end -- 492
+		end -- 489
 		extraAnims = _accum_0 -- 489
-	end -- 492
+	end -- 489
 	defaultFaceRight = not defaultFaceLeft[playable] -- 494
 	local getUnitDef -- 496
 	getUnitDef = function() -- 496
@@ -840,13 +840,13 @@ createUnit = function() -- 472
 				goto _continue_2 -- 535
 			end -- 533
 			::_continue_2:: -- 533
-		end -- 535
+		end -- 532
 		availableAnims = _accum_0 -- 532
-	end -- 535
+	end -- 532
 	for _index_0 = 1, #extraAnims do -- 537
 		local a = extraAnims[_index_0] -- 537
 		table.insert(availableAnims, a) -- 538
-	end -- 538
+	end -- 537
 	local world = Store.world -- 540
 	local grabSize <const> = 800 -- 541
 	do -- 542
@@ -909,7 +909,7 @@ if #files > 0 then -- 617
 			currentFile = math.floor(i) -- 621
 			break -- 622
 		end -- 619
-	end -- 622
+	end -- 618
 	if not playable then -- 623
 		currentFile = 1 -- 624
 		playable = files[1] -- 625
@@ -966,7 +966,7 @@ return Director.entry:addChild((function() -- 629
 				if i % 3 ~= 0 and i ~= #availableAnims then -- 657
 					SameLine() -- 657
 				end -- 657
-			end -- 657
+			end -- 651
 			if #missingAnims > 0 then -- 658
 				Text("缺失动作或名称错误：") -- 659
 				Text(table.concat(missingAnims, "\n")) -- 660
@@ -975,7 +975,7 @@ return Director.entry:addChild((function() -- 629
 				Text("多余动作：") -- 662
 				return Text(table.concat(extraAnims, "\n")) -- 663
 			end -- 661
-		end) -- 663
+		end) -- 634
 	end) -- 630
 	return _with_0 -- 629
-end)()) -- 663
+end)()) -- 629

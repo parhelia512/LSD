@@ -50,7 +50,7 @@ _module_0 = Class(HUDMove, { -- 5
 		end) -- 25
 		return self:slot("Right", function(down) -- 27
 			return updatePlayerControl("keyRight", down, true) -- 28
-		end) -- 28
+		end) -- 27
 	end -- 5
 }) -- 4
-return _module_0 -- 28
+return _module_0 -- 1

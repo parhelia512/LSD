@@ -56,6 +56,7 @@ export default function(this: void) {
 			const playable = owner.playable;
 			switch (playable.lastCompleted) {
 				case "pistol":
+				case "laser":
 				case "hit":
 					playable.recovery = 0.0;
 					break
@@ -130,6 +131,7 @@ export default function(this: void) {
 				}
 				LightStrip(bullet.position, bullet, 0xcc8dbef3);
 			});
+			owner.playable.recovery = 0.2
 			sleep(owner.playable.play("pistol"));
 			return true;
 		})

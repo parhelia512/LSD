@@ -13,10 +13,10 @@ do -- 2
 			Path(scriptPath, "Image"), -- 8
 			Path(scriptPath, "Font") -- 9
 		} -- 4
-		for _index_0 = 1, #_list_0 do -- 10
+		for _index_0 = 1, #_list_0 do -- 4
 			local path = _list_0[_index_0] -- 4
 			Content:insertSearchPath(1, path) -- 11
-		end -- 11
+		end -- 4
 	else -- 12
 		return -- 12
 	end -- 2
@@ -26,4 +26,4 @@ return Director.ui3D:addChild((function() -- 16
 	local _with_0 = Formation() -- 16
 	_with_0:alignLayout() -- 17
 	return _with_0 -- 16
-end)()) -- 17
+end)()) -- 16

@@ -27,7 +27,7 @@ do -- 11
 	inactive.visible = not inactive.visible -- 13
 	active.visible = not active.visible -- 14
 	print(index) -- 15
-end -- 15
+end -- 11
 end) -- 12
 return node1 -- 12
 end

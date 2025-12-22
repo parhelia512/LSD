@@ -176,7 +176,7 @@ playOP = function() -- 43
 	local start = 1 -- 45
 	Cache:loadAsync("spine:PV1/PV1_" .. tostring(start)) -- 46
 	for i = start, #PVInfo do -- 47
-		if (9 == i or 19 == i) then -- 48
+		if (8 == i or 19 == i) then -- 48
 			goto _continue_0 -- 48
 		end -- 48
 		local playEnded = false -- 49
@@ -235,7 +235,7 @@ playOP = function() -- 43
 			Cache:removeUnused("Texture") -- 81
 		end -- 79
 		::_continue_0:: -- 48
-	end -- 81
+	end -- 47
 end -- 43
 _module_0 = playOP -- 83
-return _module_0 -- 83
+return _module_0 -- 1

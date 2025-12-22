@@ -14,7 +14,7 @@ local Group = Dora.Group -- 1
 local Reject = _module_1.Reject -- 1
 local Accept = _module_1.Accept -- 1
 local _module_0 = nil -- 1
-local _anon_func_0 = function(Spine, _with_0) -- 16
+local _anon_func_0 = function(Spine, _with_0) -- 13
 	local _with_1 = Spine("empgun") -- 13
 	_with_1.look = "PT" -- 14
 	_with_1.scaleX = 0.2 -- 15
@@ -52,7 +52,7 @@ _module_0 = function() -- 6
 					if unit.entity.player then -- 31
 						return math.abs(self.x - unit.x) <= 200 and (self.x > unit.x) == self.faceRight -- 32
 					end -- 31
-				end -- 32
+				end -- 30
 				local unit = AI:getNearestUnit("Any") -- 33
 				if unit then -- 33
 					return math.abs(self.x - unit.x) <= 200 and (self.x > unit.x) == self.faceRight -- 34
@@ -189,13 +189,13 @@ _module_0 = function() -- 6
 			Sel({ -- 137
 				Seq({ -- 138
 					Con("fmove key down", function(self) -- 138
-						return not (self.entity.keyLeft and self.entity.keyRight) and ((self.entity.keyLeft and self.faceRight) or (self.entity.keyRight and not self.faceRight)) -- 143
+						return not (self.entity.keyLeft and self.entity.keyRight) and ((self.entity.keyLeft and self.faceRight) or (self.entity.keyRight and not self.faceRight)) -- 139
 					end), -- 138
 					Act("turn") -- 144
 				}), -- 137
 				Seq({ -- 147
 					Con("bmove key down", function(self) -- 147
-						return not (self.entity.keyLeft or self.entity.keyRight) and not (self.entity.keyBLeft and self.entity.keyBRight) and ((self.entity.keyBLeft and not self.faceRight) or (self.entity.keyBRight and self.faceRight)) -- 153
+						return not (self.entity.keyLeft or self.entity.keyRight) and not (self.entity.keyBLeft and self.entity.keyBRight) and ((self.entity.keyBLeft and not self.faceRight) or (self.entity.keyBRight and self.faceRight)) -- 148
 					end), -- 147
 					Act("turn") -- 154
 				}) -- 146
@@ -291,4 +291,4 @@ _module_0 = function() -- 6
 		normalControl -- 220
 	}) -- 215
 end -- 6
-return _module_0 -- 221
+return _module_0 -- 1

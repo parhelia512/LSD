@@ -53,12 +53,12 @@ do -- 8
 				4 -- 21
 			} -- 21
 		} -- 17
-		for _index_0 = 1, #_list_0 do -- 22
+		for _index_0 = 1, #_list_0 do -- 17
 			local _des_0 = _list_0[_index_0] -- 17
 			local x, y = _des_0[1], _des_0[2] -- 17
 			back1:setPos(x, y, back1:getPos(x, y) - offset) -- 23
-		end -- 23
+		end -- 17
 	end -- 11
-end -- 23
+end -- 8
 return node -- 9
 end

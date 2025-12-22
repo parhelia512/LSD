@@ -79,10 +79,10 @@ addLayer = (world, def) ->
 	layer
 
 export default Class
-	width: property => @_width
+	sceneWidth: property => @_width
 	offset: property -> Offset
 	left: property => Vec2 100, @offset
-	right: property => Vec2 @width - 100, @offset
+	right: property => Vec2 @sceneWidth - 100, @offset
 	center: property =>
 		if elevator := @_layers.elevatorDoor
 			Vec2 elevator.x, @offset

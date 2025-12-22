@@ -25,10 +25,10 @@ do -- 2
 			Path(scriptPath, "Image"), -- 8
 			Path(scriptPath, "Font") -- 9
 		} -- 4
-		for _index_0 = 1, #_list_0 do -- 10
+		for _index_0 = 1, #_list_0 do -- 4
 			local path = _list_0[_index_0] -- 4
 			Content:insertSearchPath(1, path) -- 11
-		end -- 11
+		end -- 4
 	else -- 12
 		return -- 12
 	end -- 2
@@ -102,7 +102,7 @@ return Director.entry:addChild((function() -- 43
 				end -- 62
 				return roleStats.figure:addChild(spine) -- 67
 			end -- 60
-		end) -- 67
+		end) -- 56
 	end) -- 51
 	return _with_0 -- 43
-end)()) -- 67
+end)()) -- 43

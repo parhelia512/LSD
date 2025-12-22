@@ -25,12 +25,12 @@ do -- 5
 			validAction = true -- 9
 		else -- 10
 			validAction = false -- 10
-		end -- 10
-	end -- 10
+		end -- 7
+	end -- 7
 	if not validAction then -- 11
 		error("invalid cmd button type: " .. tostring(action)) -- 11
 	end -- 11
-end -- 11
+end -- 5
 if action then -- 13
 local sprite3 = Sprite('button.clip|lsdar_btn_' .. action .. '_1') -- 14
 sprite3.x = 55 -- 14

@@ -40,7 +40,7 @@ do -- 4
 			config = _with_1 -- 28
 		end -- 28
 		_with_0.targetAllow = config:toValue() -- 31
-	end -- 31
+	end -- 27
 	_with_0.actions = Array({ -- 33
 		"idle", -- 33
 		"turn", -- 34

@@ -211,7 +211,7 @@ do -- 112
 		local item = _list_0[_index_0] -- 122
 		item.scaleX = scale -- 123
 		item.scaleY = scale -- 124
-	end -- 124
+	end -- 122
 	local memberWidth = w / scale - 1115 -- 125
 	do -- 126
 		local _with_0 = memberArea -- 126
@@ -222,7 +222,7 @@ do -- 112
 	local _with_0 = tacticArea -- 130
 	_with_0.x = 704 + tacticWidth / 2 -- 131
 	_with_0:adjustSizeWithAlign("Horizontal", 0, Size(tacticWidth, 739)) -- 132
-end -- 132
+end -- 112
 end) -- 113
 return item1 -- 113
 end

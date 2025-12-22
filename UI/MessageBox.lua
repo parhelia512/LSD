@@ -25,8 +25,8 @@ _module_0 = Class(MessageBox, { -- 10
 				title = item.title, -- 19
 				special = item.special, -- 20
 				text = item.text -- 21
-			})) -- 21
-		end) -- 21
+			})) -- 18
+		end) -- 17
 	end -- 10
 }) -- 9
-return _module_0 -- 21
+return _module_0 -- 1

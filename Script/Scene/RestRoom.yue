@@ -52,10 +52,10 @@ addLayer = (world, def)->
 	layer
 
 export default Class
-	width: property -> W
+	sceneWidth: property -> W
 	offset: property -> Offset
 	left: property => Vec2 100, @offset
-	right: property => Vec2 @width - 100, @offset
+	right: property => Vec2 @sceneWidth - 100, @offset
 
 	addShadowTo: (unit)=>
 		with Sprite "Image/shadow1.png"

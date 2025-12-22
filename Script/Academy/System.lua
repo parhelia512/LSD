@@ -20,14 +20,14 @@ local Color = Dora.Color -- 1
 local cycle = Dora.cycle -- 1
 local SpriteEffect = Dora.SpriteEffect -- 1
 local _module_0 = nil -- 1
-local _anon_func_0 = function(_with_1, moveEnter, unit) -- 79
+local _anon_func_0 = function(_with_1, moveEnter, unit) -- 76
 	if "center" == moveEnter then -- 77
 		return unit.faceRight -- 77
 	elseif "left" == moveEnter then -- 78
 		return true -- 78
 	elseif "right" == moveEnter then -- 79
 		return false -- 79
-	end -- 79
+	end -- 76
 end -- 76
 local _anon_func_1 = function(MaxPath, math, self, u) -- 146
 	local _exp_0 = self.order -- 146
@@ -37,7 +37,7 @@ local _anon_func_1 = function(MaxPath, math, self, u) -- 146
 		return math.random(-MaxPath, MaxPath) -- 146
 	end -- 146
 end -- 146
-local _anon_func_2 = function(GrabSize, Node, Size, _with_1, parent) -- 151
+local _anon_func_2 = function(GrabSize, Node, Size, _with_1, parent) -- 149
 	local _with_0 = Node() -- 149
 	_with_0.size = Size(GrabSize, GrabSize) -- 150
 	_with_0:addTo(parent) -- 151
@@ -78,7 +78,7 @@ _module_0 = function() -- 3
 	}) -- 30
 	do -- 34
 		local _with_0 = Observer("Add", moveComs) -- 34
-		_with_0:watch(function(self, unit, moveFromRight, moveRouteName, moveEnter, moveTargets) -- 41
+		_with_0:watch(function(self, unit, moveFromRight, moveRouteName, moveEnter, moveTargets) -- 35
 			local buttons -- 42
 			do -- 42
 				local _accum_0 = { } -- 42
@@ -135,7 +135,7 @@ _module_0 = function() -- 3
 								_with_2:openRightDoor() -- 69
 							elseif "center" == moveEnter then -- 70
 								_with_2:openCenterDoor() -- 70
-							end -- 70
+							end -- 67
 							_with_2:addTo(Director.entry) -- 71
 							world = _with_2 -- 64
 						end -- 64
@@ -150,7 +150,7 @@ _module_0 = function() -- 3
 						sleep() -- 97
 						world.visible = true -- 98
 						return oldWorld:removeFromParent() -- 99
-					end)) -- 99
+					end)) -- 57
 				end) -- 54
 			end -- 50
 			_with_1:addTo(unit.world) -- 100
@@ -294,7 +294,7 @@ _module_0 = function() -- 3
 						target = body -- 185
 					end -- 183
 					::_continue_0:: -- 173
-				end -- 185
+				end -- 172
 				local oldTarget = self.target -- 186
 				if oldTarget ~= target then -- 187
 					if oldTarget then -- 188
@@ -330,7 +330,7 @@ _module_0 = function() -- 3
 								return cycle(0.3, function(dt) -- 208
 									color.opacity = dt -- 209
 									return _with_3:get(1):set("u_linecolor", color) -- 210
-								end) -- 210
+								end) -- 208
 							end)) -- 207
 							_with_3:get(1):set("u_lineoffset", Outline, Outline, 0.1) -- 211
 							_with_2.effect = _with_3 -- 204
@@ -380,9 +380,9 @@ _module_0 = function() -- 3
 											return ui:show() -- 230
 										end) -- 230
 										return _with_2 -- 229
-									end)()) -- 230
-								end)) -- 230
-							end -- 230
+									end)()) -- 229
+								end)) -- 222
+							end -- 221
 						end) -- 220
 						ui:addTo(world) -- 231
 						ui:show() -- 232
@@ -395,4 +395,4 @@ _module_0 = function() -- 3
 	end) -- 109
 	return _with_0 -- 108
 end -- 3
-return _module_0 -- 232
+return _module_0 -- 1

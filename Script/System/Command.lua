@@ -58,8 +58,8 @@ local commands = setmetatable({ -- 6
 	__index = function(_self, name) -- 23
 		return function(...) -- 23
 			return print("[command]: " .. tostring(name) .. "(" .. tostring(table.concat(_anon_func_0(select, tostring, ...), ', ')) .. ")") -- 24
-		end -- 24
+		end -- 23
 	end -- 23
 }) -- 5
 _module_0 = commands -- 27
-return _module_0 -- 27
+return _module_0 -- 1

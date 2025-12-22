@@ -243,7 +243,7 @@ do -- 106
 	_with_0:setColor(2, 1, Color(0x00ffffff)) -- 110
 	_with_0:setColor(1, 2, Color(0x44ffffff)) -- 111
 	_with_0:setColor(2, 2, Color(0x44ffffff)) -- 112
-end -- 112
+end -- 106
 local node1 = Node() -- 115
 node1.y = 250 -- 115
 node1.width = 2721 -- 115
@@ -487,7 +487,7 @@ do -- 183
 		local item = _list_0[_index_0] -- 188
 		item.scaleX = scale * extraScale -- 189
 		item.scaleY = scale * extraScale -- 190
-	end -- 190
+	end -- 188
 	local _list_1 = { -- 191
 		bg, -- 191
 		lsdOS, -- 191
@@ -501,9 +501,9 @@ do -- 183
 		local item = _list_1[_index_0] -- 191
 		item.scaleX = scale -- 192
 		item.scaleY = scale -- 193
-	end -- 193
+	end -- 191
 	charMenu:adjustSizeWithAlign("Auto", 27, Size(2715, 1036.5)) -- 194
-end -- 194
+end -- 183
 end) -- 184
 return formation -- 184
 end

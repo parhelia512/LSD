@@ -8,4 +8,4 @@ _module_0 = Class(Passage, { -- 4
 		self.tag = "PassageA" -- 6
 	end -- 4
 }) -- 3
-return _module_0 -- 6
+return _module_0 -- 1

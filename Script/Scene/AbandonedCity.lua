@@ -118,7 +118,7 @@ addLayer = function(world, def) -- 36
 	return layer -- 44
 end -- 36
 _module_0 = Class({ -- 47
-	width = property(function() -- 47
+	sceneWidth = property(function() -- 47
 		return W -- 47
 	end), -- 47
 	offset = property(function() -- 48
@@ -166,11 +166,11 @@ _module_0 = Class({ -- 47
 	__init = function(self) -- 78
 		for i = -MaxPath, MaxPath do -- 79
 			self:setLayerOffset(i, PathOffset * i) -- 80
-		end -- 80
+		end -- 79
 		for _index_0 = 1, #layerDefs do -- 82
 			local def = layerDefs[_index_0] -- 82
 			addLayer(self, def) -- 83
-		end -- 83
+		end -- 82
 		local terrainDef -- 85
 		do -- 85
 			local _with_0 = BodyDef() -- 85
@@ -199,4 +199,4 @@ _module_0 = Class({ -- 47
 		return Cache:loadAsync("spine:abandonedCity") -- 101
 	end -- 101
 }) -- 46
-return _module_0 -- 101
+return _module_0 -- 1

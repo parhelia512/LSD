@@ -32,6 +32,6 @@ label2.text = "策略说明\n策略说明策略说明策略说明策略说明策
 view:addChild(label2) -- 13
 do -- 16
 	infoArea:adjustSizeWithAlign("Auto", 0, Size(630, 1000)) -- 18
-end -- 18
+end -- 16
 return node1 -- 17
 end

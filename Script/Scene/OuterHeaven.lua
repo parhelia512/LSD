@@ -214,11 +214,11 @@ _module_0 = Class({ -- 64
 		for i = -MaxPath, MaxPath do -- 96
 			self:setLayerOffset(i, PathOffset * i) -- 97
 			self:getLayer(i).z = -50 * i -- 98
-		end -- 98
+		end -- 96
 		for _index_0 = 1, #layerDefs do -- 100
 			local def = layerDefs[_index_0] -- 100
 			addLayer(self, def) -- 101
-		end -- 101
+		end -- 100
 		local terrainDef -- 103
 		do -- 103
 			local _with_0 = BodyDef() -- 103
@@ -247,4 +247,4 @@ _module_0 = Class({ -- 64
 		return Cache:loadAsync("spine:outerHeaven") -- 119
 	end -- 119
 }) -- 63
-return _module_0 -- 119
+return _module_0 -- 1

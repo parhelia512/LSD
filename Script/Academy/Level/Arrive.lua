@@ -42,7 +42,7 @@ _module_0 = function() -- 9
 		player = true, -- 28
 		name = Config.char, -- 29
 		faceRight = false, -- 30
-		position = Vec2(world.width / 2, world.offset), -- 31
+		position = Vec2(world.sceneWidth / 2, world.offset), -- 31
 		busy = true, -- 32
 		base = true -- 33
 	}) -- 27
@@ -50,7 +50,7 @@ _module_0 = function() -- 9
 		player = false, -- 36
 		name = "ninilite", -- 37
 		faceRight = false, -- 38
-		position = Vec2(world.width / 2 + 180, world.offset), -- 39
+		position = Vec2(world.sceneWidth / 2 + 180, world.offset), -- 39
 		busy = true, -- 40
 		base = true -- 41
 	}) -- 35
@@ -73,15 +73,16 @@ _module_0 = function() -- 9
 		end -- 45
 	end) -- 43
 	return thread(function() -- 54
-		local HUDControl = require("UI.HUDControl") -- 55
-		local _with_0 = HUDControl() -- 56
-		_with_0:addTo(Director.ui3D) -- 57
-		_with_0.visible = false -- 58
-		sleep(6) -- 59
-		_with_0.visible = true -- 60
-		_with_0:perform(Opacity(1, 0, 1)) -- 61
-		emit("HUD.DisplayMove", true) -- 62
-		return _with_0 -- 56
-	end) -- 62
+		sleep(10) -- 55
+		local HUDControl = require("UI.HUDControl") -- 56
+		local _with_0 = HUDControl() -- 57
+		_with_0:addTo(Director.ui3D) -- 58
+		_with_0.visible = false -- 59
+		sleep(1) -- 60
+		_with_0.visible = true -- 61
+		_with_0:perform(Opacity(1, 0, 1)) -- 62
+		emit("HUD.DisplayMove", true) -- 63
+		return _with_0 -- 57
+	end) -- 54
 end -- 9
-return _module_0 -- 62
+return _module_0 -- 1

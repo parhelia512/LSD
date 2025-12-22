@@ -55,8 +55,8 @@ do -- 26
 	for _index_0 = 1, #codes do -- 29
 		local code = codes[_index_0] -- 29
 		Struct:load("Wenyan", code) -- 30
-	end -- 30
-end -- 30
+	end -- 29
+end -- 26
 local layerDefs = { -- 39
 	{ -- 39
 		look = "floor", -- 39
@@ -98,7 +98,7 @@ addLayer = function(world, def) -- 45
 	return layer -- 55
 end -- 45
 _module_0 = Class({ -- 58
-	width = property(function() -- 58
+	sceneWidth = property(function() -- 58
 		return W -- 58
 	end), -- 58
 	offset = property(function() -- 59
@@ -137,11 +137,11 @@ _module_0 = Class({ -- 58
 	__init = function(self) -- 84
 		for i = -MaxPath, MaxPath do -- 85
 			self:setLayerOffset(i, PathOffset * -i) -- 86
-		end -- 86
+		end -- 85
 		for _index_0 = 1, #layerDefs do -- 88
 			local def = layerDefs[_index_0] -- 88
 			addLayer(self, def) -- 89
-		end -- 89
+		end -- 88
 		local code = codes[math.random(1, #codes)] -- 91
 		local codeStr = code.code -- 92
 		local len = u8.len(codeStr) -- 93
@@ -207,9 +207,9 @@ _module_0 = Class({ -- 58
 					end -- 137
 					_accum_0[_len_0] = label -- 140
 					_len_0 = _len_0 + 1 -- 128
-				end -- 140
+				end -- 127
 				chars = _accum_0 -- 127
-			end -- 140
+			end -- 127
 			codePanel:schedule(loop(function() -- 141
 				codePanel:addChild((function() -- 142
 					local _with_0 = Node() -- 142
@@ -218,7 +218,7 @@ _module_0 = Class({ -- 58
 							local char = chars[_index_0] -- 144
 							char:perform(blink) -- 145
 							sleep(0.01) -- 146
-						end -- 146
+						end -- 144
 						return _with_0:removeFromParent() -- 147
 					end)) -- 143
 					return _with_0 -- 142
@@ -226,7 +226,7 @@ _module_0 = Class({ -- 58
 				return sleep(2) -- 148
 			end)) -- 141
 			start = start + FrameLen -- 149
-		end -- 149
+		end -- 102
 		local index = 1 -- 150
 		local count = math.max(#lefts, #rights) -- 151
 		self:schedule(loop(function() -- 152
@@ -281,4 +281,4 @@ _module_0 = Class({ -- 58
 		return Cache:loadAsync("spine:VRTraining") -- 191
 	end -- 191
 }) -- 57
-return _module_0 -- 191
+return _module_0 -- 1

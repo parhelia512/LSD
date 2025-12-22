@@ -127,7 +127,7 @@ do -- 77
 			name = name, -- 86
 			text = text -- 86
 		})) -- 86
-	end -- 86
+	end -- 85
 	reviewArea.view:addChild(ReviewSentence({ -- 87
 		width = reviewW, -- 87
 		name = "", -- 87
@@ -159,7 +159,7 @@ do -- 77
 		local item = _list_1[_index_0] -- 96
 		item.scaleX = scale -- 97
 		item.scaleY = scale -- 98
-	end -- 98
+	end -- 96
 	talkBack:removeFromParent() -- 99
 	local realWidth = w / scale -- 100
 	do -- 101
@@ -185,7 +185,7 @@ do -- 77
 	text.textWidth = realWidth - 890 -- 108
 	textArea.x = 436 + (realWidth - 890) / 2 -- 109
 	textArea:adjustSizeWithAlign("Auto", 0, Size(realWidth - 890, math.min(300, text.height))) -- 110
-end -- 110
+end -- 77
 end) -- 78
 return ui -- 78
 end

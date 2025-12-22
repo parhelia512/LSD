@@ -56,13 +56,13 @@ do -- 26
 	activeStencil.visible = selected -- 35
 	inactive.visible = not selected -- 36
 	inactiveStencil.visible = not selected -- 37
-end -- 37
+end -- 26
 end) -- 27
 do -- 39
 	movingText.color3 = Color3(selected and 0x7ec0f8 or 0xffffff) -- 41
 	btn.selected = selected or false -- 42
 	local size = selected and active.size or inactive.size -- 43
 	btn.size = size -- 44
-end -- 44
+end -- 39
 return btn -- 40
 end

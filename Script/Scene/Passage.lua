@@ -231,7 +231,7 @@ addLayer = function(world, def) -- 71
 	end -- 78
 	return layer -- 79
 end -- 71
-local _anon_func_0 = function(ClipNode, back, createLayer, floor, mask) -- 163
+local _anon_func_0 = function(ClipNode, back, createLayer, floor, mask) -- 160
 	local _with_0 = ClipNode(mask) -- 160
 	_with_0:addChild(createLayer(back)) -- 161
 	_with_0:addChild(createLayer(floor)) -- 162
@@ -239,7 +239,7 @@ local _anon_func_0 = function(ClipNode, back, createLayer, floor, mask) -- 163
 	return _with_0 -- 160
 end -- 160
 _module_0 = Class({ -- 82
-	width = property(function(self) -- 82
+	sceneWidth = property(function(self) -- 82
 		return self._width -- 82
 	end), -- 82
 	offset = property(function() -- 83
@@ -249,7 +249,7 @@ _module_0 = Class({ -- 82
 		return Vec2(100, self.offset) -- 84
 	end), -- 84
 	right = property(function(self) -- 85
-		return Vec2(self.width - 100, self.offset) -- 85
+		return Vec2(self.sceneWidth - 100, self.offset) -- 85
 	end), -- 85
 	center = property(function(self) -- 86
 		local elevator = self._layers.elevatorDoor -- 87
@@ -332,7 +332,7 @@ _module_0 = Class({ -- 82
 		for i = -MaxPath, MaxPath do -- 141
 			local _with_0 = self:getLayer(i) -- 142
 			_with_0.z = ZOffset - PathOffset * i -- 143
-		end -- 143
+		end -- 141
 		do -- 145
 			local _tbl_0 = { } -- 145
 			local _list_0 = passageDef.items -- 145
@@ -407,7 +407,7 @@ _module_0 = Class({ -- 82
 					door, animation, route = self._layers.rightwall, "openR", "right" -- 192
 				elseif ElevatorSensor == sensorTag then -- 193
 					door, animation, route = self._layers.elevatorDoor, "openElevator", "center" -- 194
-				end -- 194
+				end -- 188
 				local enter, targets -- 195
 				name, enter, targets = Map.getRoute(self._name, route) -- 195
 				if name then -- 195
@@ -459,7 +459,7 @@ _module_0 = Class({ -- 82
 					door, animation = self._layers.rightwall, "closeR" -- 222
 				elseif ElevatorSensor == sensorTag then -- 223
 					door, animation = self._layers.elevatorDoor, "closeElevator" -- 224
-				end -- 224
+				end -- 218
 				door.opened = false -- 226
 				door.recovery = 1 -- 227
 				door.speed = DoorSpeed -- 228
@@ -480,4 +480,4 @@ _module_0 = Class({ -- 82
 		return Cache:loadAsync("spine:passage") -- 234
 	end -- 234
 }) -- 81
-return _module_0 -- 234
+return _module_0 -- 1

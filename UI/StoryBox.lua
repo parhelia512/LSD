@@ -77,6 +77,6 @@ do -- 28
 		end -- 43
 		_with_0:setPos(2, 1, Vec2(x, y + yOffset)) -- 44
 	end -- 30
-end -- 44
+end -- 28
 return box -- 29
 end

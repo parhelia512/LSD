@@ -46,7 +46,7 @@ addLayer = (world, def) ->
 	layer
 
 export default Class
-	width: property -> W
+	sceneWidth: property -> W
 	offset: property -> Offset
 
 	addShadowTo: (unit) =>

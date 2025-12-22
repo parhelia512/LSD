@@ -111,7 +111,7 @@ addLayer = function(world, def) -- 32
 	return layer -- 42
 end -- 32
 _module_0 = Class({ -- 45
-	width = property(function() -- 45
+	sceneWidth = property(function() -- 45
 		return W -- 45
 	end), -- 45
 	offset = property(function() -- 46
@@ -169,7 +169,7 @@ _module_0 = Class({ -- 45
 	__init = function(self) -- 83
 		for i = -MaxPath, MaxPath do -- 84
 			self:setLayerOffset(i, PathOffset * -i) -- 85
-		end -- 85
+		end -- 84
 		do -- 87
 			local _tbl_0 = { } -- 87
 			for _index_0 = 1, #layerDefs do -- 87
@@ -266,8 +266,8 @@ _module_0 = Class({ -- 45
 					for y = 1, 2 do -- 148
 						local pos = _with_0:getPos(x, y) -- 149
 						_with_0:setPos(x, y, pos, math.sin(math.abs(x - 11) * math.pi / 200) * math.abs(x - 11) * h * 0.25) -- 150
-					end -- 150
-				end -- 150
+					end -- 148
+				end -- 147
 			end -- 146
 			node:gslot("AppChange", function(settingName) -- 151
 				if settingName == "Size" then -- 151
@@ -280,17 +280,17 @@ _module_0 = Class({ -- 45
 						for y = 1, 2 do -- 158
 							local pos = _with_0:getPos(x, y) -- 159
 							_with_0:setPos(x, y, pos, math.sin(math.abs(x - 11) * math.pi / 200) * math.abs(x - 11) * h * 0.25) -- 160
-						end -- 160
-					end -- 160
+						end -- 158
+					end -- 157
 					return _with_0 -- 156
 				end -- 151
 			end) -- 151
 			world:moveToParent(node) -- 161
 			return node -- 131
-		end) -- 161
+		end) -- 130
 	end, -- 83
 	loadAsync = function(_) -- 164
 		return Cache:loadAsync("spine:loopTowerA") -- 164
 	end -- 164
 }) -- 44
-return _module_0 -- 164
+return _module_0 -- 1

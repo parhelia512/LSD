@@ -26,4 +26,4 @@ return Director.entry:schedule(once(function() -- 8
 	end -- 16
 	local TutorialLevel = require("Tutorial.Level") -- 21
 	return TutorialLevel() -- 22
-end)) -- 22
+end)) -- 8

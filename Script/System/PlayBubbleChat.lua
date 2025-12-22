@@ -28,16 +28,16 @@ getCharName = function(current) -- 9
 					local _type_1 = type(_obj_0) -- 12
 					if "table" == _type_1 or "userdata" == _type_1 then -- 12
 						name = _obj_0.name -- 12
-					end -- 15
-				end -- 15
+					end -- 12
+				end -- 12
 				local id -- 12
 				do -- 12
 					local _obj_0 = mark.attrs -- 12
 					local _type_1 = type(_obj_0) -- 12
 					if "table" == _type_1 or "userdata" == _type_1 then -- 12
 						id = _obj_0.id -- 12
-					end -- 15
-				end -- 15
+					end -- 12
+				end -- 12
 				if name == nil then -- 12
 					name = '' -- 12
 				end -- 12
@@ -52,8 +52,8 @@ getCharName = function(current) -- 9
 						return name, id -- 15
 					end -- 13
 				end -- 12
-			end -- 15
-		end -- 15
+			end -- 12
+		end -- 11
 	end -- 10
 	return '', '' -- 16
 end -- 9
@@ -92,8 +92,8 @@ _module_0 = function(file) -- 18
 				end -- 26
 			else -- 34
 				return -- 34
-			end -- 34
-		until false -- 35
-	end) -- 35
+			end -- 23
+		until false -- 21
+	end) -- 21
 end -- 18
-return _module_0 -- 35
+return _module_0 -- 1

@@ -179,7 +179,7 @@ addLayer = function(world, def) -- 46
 	return layer -- 56
 end -- 46
 _module_0 = Class({ -- 59
-	width = property(function() -- 59
+	sceneWidth = property(function() -- 59
 		return W -- 59
 	end), -- 59
 	offset = property(function() -- 60
@@ -223,13 +223,13 @@ _module_0 = Class({ -- 59
 				sleep(0.5) -- 87
 				layer.visible = false -- 88
 			end)) -- 86
-		end -- 88
+		end -- 83
 		for _index_0 = 1, #showLayers do -- 89
 			local def = showLayers[_index_0] -- 89
 			local layer = self:getLayer(def.order) -- 90
 			layer:runAction(Opacity(0.5, 0, 1)) -- 91
 			layer.visible = true -- 92
-		end -- 92
+		end -- 89
 	end), -- 78
 	__partial = function(_self) -- 94
 		local _with_0 = PlatformWorld() -- 95
@@ -244,13 +244,13 @@ _module_0 = Class({ -- 59
 		end -- 100
 		for i = -MaxPath, MaxPath do -- 101
 			self:setLayerOffset(i, PathOffset * -i) -- 102
-		end -- 102
+		end -- 101
 		for _index_0 = 1, #layerDefs do -- 104
 			local def = layerDefs[_index_0] -- 104
 			if not (def.highSpeed ~= nil) or def.highSpeed == highSpeed then -- 105
 				addLayer(self, def) -- 106
 			end -- 105
-		end -- 106
+		end -- 104
 		local terrainDef -- 108
 		do -- 108
 			local _with_0 = BodyDef() -- 108
@@ -279,10 +279,10 @@ _module_0 = Class({ -- 59
 		return self:schedule(loop(function() -- 126
 			sleep(math.random(5, 30)) -- 127
 			self.isUnderground = not self.isUnderground -- 128
-		end)) -- 128
+		end)) -- 126
 	end, -- 100
 	loadAsync = function(_self) -- 130
 		return Cache:loadAsync("spine:train") -- 130
 	end -- 130
 }) -- 58
-return _module_0 -- 130
+return _module_0 -- 1

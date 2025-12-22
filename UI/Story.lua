@@ -37,16 +37,16 @@ getCharName = function(current) -- 12
 					local _type_1 = type(_obj_0) -- 15
 					if "table" == _type_1 or "userdata" == _type_1 then -- 15
 						name = _obj_0.name -- 15
-					end -- 18
-				end -- 18
+					end -- 15
+				end -- 15
 				local id -- 15
 				do -- 15
 					local _obj_0 = mark.attrs -- 15
 					local _type_1 = type(_obj_0) -- 15
 					if "table" == _type_1 or "userdata" == _type_1 then -- 15
 						id = _obj_0.id -- 15
-					end -- 18
-				end -- 18
+					end -- 15
+				end -- 15
 				if name == nil then -- 15
 					name = '' -- 15
 				end -- 15
@@ -61,8 +61,8 @@ getCharName = function(current) -- 12
 						return name, id -- 18
 					end -- 16
 				end -- 15
-			end -- 18
-		end -- 18
+			end -- 15
+		end -- 14
 	end -- 13
 	return '', '' -- 19
 end -- 12
@@ -102,15 +102,15 @@ _module_0 = Class(Story, { -- 22
 						self._preload = preload -- 46
 						return self:advance() -- 47
 					end -- 45
-				end -- 47
-			end -- 47
+				end -- 45
+			end -- 45
 			return true -- 48
 		elseif "Error" == action then -- 49
 			print(result) -- 50
 			return false -- 51
 		else -- 53
 			return false -- 53
-		end -- 53
+		end -- 32
 	end, -- 30
 	__init = function(self, dialogFile) -- 55
 		self._runner = YarnRunner(dialogFile, "Start", Config, Command) -- 56
@@ -170,7 +170,7 @@ _module_0 = Class(Story, { -- 22
 					if (value ~= nil) then -- 87
 						self.text.text = value -- 87
 					end -- 87
-				end -- 87
+				end -- 79
 			end -- 79
 			_with_0.__updated = function() -- 88
 				return self:alignLayout() -- 88
@@ -192,9 +192,9 @@ _module_0 = Class(Story, { -- 22
 					figureFile = "spine:vikaFigure" -- 97
 				else -- 98
 					figureFile = "spine:" .. tostring(item) .. "Figure" -- 98
-				end -- 98
+				end -- 95
 				Cache:loadAsync(figureFile) -- 99
-			end -- 99
+			end -- 94
 			self._preload = nil -- 100
 		end -- 93
 		if not self._current then -- 101
@@ -212,7 +212,7 @@ _module_0 = Class(Story, { -- 22
 			figureFile = "spine:vikaFigure" -- 107
 		else -- 108
 			figureFile = "spine:" .. tostring(characterId) .. "Figure" -- 108
-		end -- 108
+		end -- 105
 		if characterId and characterId ~= "" then -- 109
 			Cache:loadAsync(figureFile) -- 109
 		end -- 109
@@ -257,11 +257,11 @@ _module_0 = Class(Story, { -- 22
 							else -- 132
 								return self:hide() -- 132
 							end -- 129
-						end) -- 132
+						end) -- 126
 					end) -- 124
 					return _with_0 -- 123
 				end)()) -- 123
-			end -- 132
+			end -- 119
 			local size = self.answerList:alignItems(40) -- 133
 			self.answerList.size = size -- 134
 			self.answerList:alignItems(40) -- 135
@@ -296,7 +296,7 @@ _module_0 = Class(Story, { -- 22
 			for _ = 1, 3 do -- 154
 				_with_0:add(blurH) -- 155
 				_with_0:add(blurV) -- 156
-			end -- 156
+			end -- 154
 			View.postEffect = _with_0 -- 153
 		end -- 153
 		self:gslot("AppChange", function(settingName) -- 157
@@ -325,7 +325,7 @@ _module_0 = Class(Story, { -- 22
 			View.scale = viewScale -- 173
 			sleep() -- 174
 			View.postEffect = viewEffect -- 175
-		end) -- 175
+		end) -- 169
 	end -- 163
 }) -- 21
-return _module_0 -- 175
+return _module_0 -- 1

@@ -49,7 +49,7 @@ do -- 28
 	local _with_0 = clip:grab(1, 2) -- 30
 	_with_0:setColor(1, 3, Color(0x22ffffff)) -- 31
 	_with_0:setColor(2, 3, Color(0x22ffffff)) -- 32
-end -- 32
+end -- 28
 local node2 = Node() -- 34
 node2.scaleX = scale -- 34
 node2.scaleY = scale -- 34
@@ -93,10 +93,10 @@ do -- 42
 				if changed then -- 58
 					playable.scaleX, playable.scaleY = scaleX, scaleX -- 58
 				end -- 58
-			end) -- 58
+			end) -- 50
 		end) -- 46
 	end -- 44
-end -- 58
+end -- 42
 else -- 60
 local playable1 = Playable('spine:' .. role .. 'Figure') -- 61
 playable1.x = figureDefs[role].x -- 61

@@ -120,7 +120,7 @@ addLayer = function(world, def) -- 36
 	return layer -- 54
 end -- 36
 _module_0 = Class({ -- 57
-	width = property(function() -- 57
+	sceneWidth = property(function() -- 57
 		return W -- 57
 	end), -- 57
 	offset = property(function() -- 58
@@ -130,10 +130,10 @@ _module_0 = Class({ -- 57
 		return Vec2(100, self.offset) -- 59
 	end), -- 59
 	right = property(function(self) -- 60
-		return Vec2(self.width - 100, self.offset) -- 60
+		return Vec2(self.sceneWidth - 100, self.offset) -- 60
 	end), -- 60
 	center = property(function(self) -- 61
-		return Vec2(self.width / 2, self.offset) -- 61
+		return Vec2(self.sceneWidth / 2, self.offset) -- 61
 	end), -- 61
 	addShadowTo = function(self, unit) -- 63
 		local _with_0 = Sprite("Image/shadow1.png") -- 64
@@ -208,8 +208,8 @@ _module_0 = Class({ -- 57
 			return self:schedule(once(function() -- 116
 				return cycle(4.5 / self._speed, function(dt) -- 117
 					self.zoom = 0.6 + (0.4 * Ease:func(Ease.InOutBack, dt)) -- 118
-				end) -- 118
-			end)) -- 118
+				end) -- 117
+			end)) -- 116
 		end)) -- 113
 		return self._layers.back:schedule(once(function() -- 119
 			self._layers.back:play("backOn") -- 120
@@ -225,7 +225,7 @@ _module_0 = Class({ -- 57
 				sleep(_with_0:play("gateOn")) -- 129
 			end -- 127
 			return self:openGate() -- 130
-		end)) -- 130
+		end)) -- 119
 	end, -- 111
 	makeUnitEnter = function(self, unit, delay, order) -- 132
 		if delay == nil then -- 132
@@ -255,7 +255,7 @@ _module_0 = Class({ -- 57
 			unit:start("cancel") -- 149
 			unit:start("idle1") -- 150
 			return sleep(3) -- 151
-		end)) -- 151
+		end)) -- 138
 	end, -- 132
 	__partial = function(_) -- 153
 		local _with_0 = PlatformWorld() -- 154
@@ -267,7 +267,7 @@ _module_0 = Class({ -- 57
 		for i = -MaxPath, MaxPath do -- 159
 			local _with_0 = self:getLayer(i) -- 160
 			_with_0.z = ZOffset - PathOffset * i -- 161
-		end -- 161
+		end -- 159
 		do -- 163
 			local _tbl_0 = { } -- 163
 			for _index_0 = 1, #layerDefs do -- 163
@@ -309,7 +309,7 @@ _module_0 = Class({ -- 57
 					door, animation, route = self._layers.leftwall, "openL", "left" -- 187
 				elseif RightDoorSensor == sensorTag then -- 188
 					door, animation, route = self._layers.rightwall, "openR", "right" -- 189
-				end -- 189
+				end -- 185
 				local name, enter, targets = Map.getRoute(SceneName, route) -- 190
 				if name then -- 190
 					do -- 191
@@ -358,7 +358,7 @@ _module_0 = Class({ -- 57
 					door, animation = self._layers.leftwall, "closeL" -- 215
 				elseif RightDoorSensor == sensorTag then -- 216
 					door, animation = self._layers.rightwall, "closeR" -- 217
-				end -- 217
+				end -- 213
 				door.opened = false -- 219
 				door.recovery = 1 -- 220
 				door.speed = DoorSpeed -- 221
@@ -380,4 +380,4 @@ _module_0 = Class({ -- 57
 		return Cache:loadAsync("spine:preparationRoom") -- 230
 	end -- 230
 }) -- 56
-return _module_0 -- 230
+return _module_0 -- 1

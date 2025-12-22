@@ -18,10 +18,10 @@ do -- 3
 			Path(scriptPath, "Image"), -- 9
 			Path(scriptPath, "Font") -- 10
 		} -- 5
-		for _index_0 = 1, #_list_0 do -- 11
+		for _index_0 = 1, #_list_0 do -- 5
 			local path = _list_0[_index_0] -- 5
 			Content:insertSearchPath(1, path) -- 12
-		end -- 12
+		end -- 5
 	else -- 13
 		return -- 13
 	end -- 3
@@ -38,8 +38,8 @@ return Director.entry:addChild((function() -- 15
 			for y = 1, 2 do -- 22
 				local pos = _with_1:getPos(x, y) -- 23
 				_with_1:setPos(x, y, pos, math.sin(math.abs(x - 6) * math.pi / 50) * math.abs(x - 6) * 200) -- 24
-			end -- 24
-		end -- 24
+			end -- 22
+		end -- 21
 	end -- 20
 	_with_0:addChild((function() -- 25
 		local _with_1 = Sprite("Image/loopTower.png") -- 25
@@ -51,4 +51,4 @@ return Director.entry:addChild((function() -- 15
 		return _with_1 -- 25
 	end)()) -- 25
 	return _with_0 -- 15
-end)()) -- 30
+end)()) -- 15

@@ -30,6 +30,6 @@ do -- 12
 	item.height = height -- 17
 	label.y = height - padding / 2 -- 18
 	txt.y = height - 6 - padding / 2 -- 19
-end -- 19
+end -- 12
 return item -- 13
 end

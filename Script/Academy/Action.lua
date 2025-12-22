@@ -9,7 +9,7 @@ local math = _G.math -- 1
 local coroutine = _G.coroutine -- 1
 local Vec2 = Dora.Vec2 -- 1
 local _module_0 = nil -- 1
-local _anon_func_0 = function(_with_0) -- 130
+local _anon_func_0 = function(_with_0) -- 117
 	local _val_0 = _with_0.lastCompleted -- 117
 	return "melee" == _val_0 or "pistol" == _val_0 or "bow" == _val_0 or "gun1" == _val_0 or "gun2" == _val_0 or "gun3" == _val_0 or "throw" == _val_0 or "parry" == _val_0 or "defense" == _val_0 or "comp" == _val_0 or "comm" == _val_0 or "hit" == _val_0 -- 117
 end -- 117
@@ -32,7 +32,7 @@ _module_0 = function() -- 3
 				_with_0.recovery = 0 -- 16
 				sleep(_with_0:play("standUp")) -- 17
 				return _with_0 -- 12
-			end) -- 17
+			end) -- 12
 		end -- 12
 	}) -- 6
 	UnitAction:add("evade", { -- 20
@@ -63,7 +63,7 @@ _module_0 = function() -- 3
 				end -- 33
 				sleep(0.3) -- 37
 				return true -- 38
-			end) -- 38
+			end) -- 30
 		end -- 25
 	}) -- 19
 	UnitAction:add("rush", { -- 41
@@ -94,7 +94,7 @@ _module_0 = function() -- 3
 				end -- 54
 				sleep(0.3) -- 58
 				return true -- 59
-			end) -- 59
+			end) -- 51
 		end -- 46
 	}) -- 40
 	UnitAction:add("hit", { -- 62
@@ -111,7 +111,7 @@ _module_0 = function() -- 3
 				_with_0.speed = 1 -- 69
 				sleep(_with_0:play("hit")) -- 70
 				return _with_0 -- 68
-			end) -- 70
+			end) -- 67
 		end -- 67
 	}) -- 61
 	UnitAction:add("pistol", { -- 73
@@ -128,7 +128,7 @@ _module_0 = function() -- 3
 				_with_0.speed = 1 -- 80
 				sleep(_with_0:play("pistol")) -- 81
 				return _with_0 -- 79
-			end) -- 81
+			end) -- 78
 		end -- 78
 	}) -- 72
 	UnitAction:add("test", { -- 84
@@ -145,7 +145,7 @@ _module_0 = function() -- 3
 				_with_0.speed = 1 -- 90
 				sleep(_with_0:play(Store.testAction)) -- 91
 				return _with_0 -- 89
-			end) -- 91
+			end) -- 89
 		end -- 89
 	}) -- 83
 	UnitAction:add("idle", { -- 94
@@ -164,13 +164,13 @@ _module_0 = function() -- 3
 					sleep(3) -- 102
 					sleep(_with_0:play("idle1")) -- 103
 					_with_0:play("idle", true) -- 104
-				end -- 104
+				end -- 101
 			end) -- 101
 			self.data.playIdleSpecial = playIdleSpecial -- 105
 			return function(self) -- 106
 				coroutine.resume(playIdleSpecial) -- 107
 				return not self.onSurface -- 108
-			end -- 108
+			end -- 106
 		end -- 98
 	}) -- 93
 	UnitAction:add("prepare", { -- 111
@@ -216,7 +216,7 @@ _module_0 = function() -- 3
 				end -- 147
 				self.velocityX = moveSpeed * (self.faceRight and move or -move) -- 151
 				return not self.onSurface -- 152
-			end -- 152
+			end -- 144
 		end -- 140
 	}) -- 135
 	UnitAction:add("keepIdle", { -- 155
@@ -251,7 +251,7 @@ _module_0 = function() -- 3
 				_with_0.speed = 1 -- 173
 				sleep(_with_0:play("idle1", false)) -- 174
 				return _with_0 -- 172
-			end) -- 174
+			end) -- 171
 		end -- 171
 	}) -- 165
 	UnitAction:add("keepMove", { -- 177
@@ -296,7 +296,7 @@ _module_0 = function() -- 3
 				end -- 199
 				self.velocityX = moveSpeed * (self.faceRight and -move or move) * 0.5 -- 203
 				return not self.onSurface -- 204
-			end -- 204
+			end -- 196
 		end -- 192
 	}) -- 187
 	UnitAction:add("jump", { -- 207
@@ -316,7 +316,7 @@ _module_0 = function() -- 3
 				_with_0.speed = 1 -- 218
 				sleep(_with_0:play("jump", false)) -- 219
 				return _with_0 -- 217
-			end) -- 219
+			end) -- 216
 		end -- 212
 	}) -- 206
 	return UnitAction:add("fallOff", { -- 222
@@ -344,9 +344,9 @@ _module_0 = function() -- 3
 					else -- 239
 						coroutine.yield(false) -- 239
 					end -- 233
-				end -- 239
-			end) -- 239
+				end -- 232
+			end) -- 231
 		end -- 226
-	}) -- 239
+	}) -- 221
 end -- 3
-return _module_0 -- 239
+return _module_0 -- 1

@@ -41,7 +41,7 @@ do -- 7
 			config = _with_1 -- 33
 		end -- 33
 		_with_0.targetAllow = config:toValue() -- 36
-	end -- 36
+	end -- 32
 	_with_0.damageType = 0 -- 37
 	_with_0.defenceType = 0 -- 38
 	_with_0.bulletType = "Bullet_1" -- 39
@@ -102,7 +102,7 @@ do -- 64
 			config = _with_1 -- 88
 		end -- 88
 		_with_0.targetAllow = config:toValue() -- 91
-	end -- 91
+	end -- 87
 	_with_0.damageType = 0 -- 92
 	_with_0.defenceType = 0 -- 93
 	_with_0.bulletType = "Bullet_1" -- 94
@@ -160,7 +160,7 @@ do -- 140
 		config = _with_1 -- 141
 	end -- 141
 	_with_0.targetAllow = config:toValue() -- 144
-end -- 144
+end -- 140
 _with_0.damageType = 0 -- 145
 _with_0.defenceType = 0 -- 146
 _with_0.bulletType = "Bullet_1" -- 147

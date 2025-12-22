@@ -21,7 +21,7 @@ left:addChild(logo) -- 12
 do -- 12
 	logo:moveUV(1, 2, Vec2(0, -537)) -- 14
 	logo:moveUV(2, 2, Vec2(0, -537)) -- 15
-end -- 15
+end -- 12
 local label1 = Label("SourceHanSansCN-Regular",300) -- 18
 label1.anchor = Vec2(0,label1.anchor.y) -- 18
 label1.x = 129.5 -- 18
@@ -164,8 +164,8 @@ do -- 73
 		local item = _list_0[_index_0] -- 80
 		item.scaleX = scale -- 81
 		item.scaleY = scale -- 82
-	end -- 82
-end -- 82
+	end -- 80
+end -- 73
 end) -- 74
 return item1 -- 74
 end

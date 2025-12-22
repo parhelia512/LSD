@@ -120,7 +120,7 @@ do -- 74
 		name = '地底的喧嚣' -- 85
 	})) -- 85
 	screenArea:addChild(content) -- 87
-end -- 87
+end -- 74
 end) -- 75
 local tab2 = PhoneTabButton{x = -3, index = 2, tabIcon = "phone.clip|phone_icon_mission_"} -- 91
 node2:addChild(tab2) -- 91
@@ -145,7 +145,7 @@ do -- 92
 		time = "17:28" -- 103
 	})) -- 103
 	screenArea:addChild(content) -- 104
-end -- 104
+end -- 92
 end) -- 93
 local tab3 = PhoneTabButton{x = 206, index = 3, tabIcon = "phone.clip|phone_icon_collect_"} -- 108
 node2:addChild(tab3) -- 108
@@ -166,7 +166,7 @@ do -- 110
 	end -- 118
 	content:addChild(PhoneSetting()) -- 121
 	screenArea:addChild(content) -- 122
-end -- 122
+end -- 110
 end) -- 111
 phone:slot("AlignLayout",function(_w,  h) -- 132
 do -- 132
@@ -178,8 +178,8 @@ do -- 132
 		local item = _list_0[_index_0] -- 135
 		item.scaleX = scale -- 136
 		item.scaleY = scale -- 137
-	end -- 137
-end -- 137
+	end -- 135
+end -- 132
 end) -- 133
 return phone -- 133
 end

@@ -11,7 +11,7 @@ local InputButton = require("UI.InputButton") -- 2
 local Interaction = require("UI.View.Interaction") -- 3
 local _anon_func_0 = function(Event, Sequence, fadeOut, remove) -- 37
 	if remove then -- 37
-		return Sequence(fadeOut, Event("Remove")) -- 41
+		return Sequence(fadeOut, Event("Remove")) -- 38
 	else -- 43
 		return fadeOut -- 43
 	end -- 37
@@ -39,7 +39,7 @@ _module_0 = Class(Interaction, { -- 10
 				return _with_0 -- 15
 			end)()) -- 15
 			index = index + 1 -- 18
-		end -- 18
+		end -- 13
 		local size = self.menu:alignItems(5) -- 19
 		self.menu.size = size -- 20
 		self.menu:alignItems(5) -- 21
@@ -49,7 +49,7 @@ _module_0 = Class(Interaction, { -- 10
 	end, -- 10
 	show = function(self) -- 24
 		self.menu.enabled = true -- 25
-		return self:perform(Spawn(Opacity(0.2, 0, 1), Y(0.2, 220, 200, Ease.OutQuad))) -- 29
+		return self:perform(Spawn(Opacity(0.2, 0, 1), Y(0.2, 220, 200, Ease.OutQuad))) -- 26
 	end, -- 24
 	hide = function(self, remove) -- 31
 		if remove == nil then -- 31
@@ -57,7 +57,7 @@ _module_0 = Class(Interaction, { -- 10
 		end -- 31
 		self.menu.enabled = false -- 32
 		local fadeOut = Spawn(Opacity(0.2, 1, 0), Y(0.2, 200, 220, Ease.InQuad)) -- 33
-		return self:perform(_anon_func_0(Event, Sequence, fadeOut, remove)) -- 43
+		return self:perform(_anon_func_0(Event, Sequence, fadeOut, remove)) -- 37
 	end -- 31
 }) -- 9
-return _module_0 -- 43
+return _module_0 -- 1

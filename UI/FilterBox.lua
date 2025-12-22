@@ -17,7 +17,7 @@ do -- 6
 	bg:moveUV(3, 2, Vec2(-185, 0)) -- 9
 	logo:moveUV(3, 1, Vec2(-185, 0)) -- 10
 	logo:moveUV(3, 2, Vec2(-185, 0)) -- 11
-end -- 11
+end -- 6
 local header = Grid("gearBox.clip|formation_pop_header", 2, 1) -- 14
 header.x = 520 - 12 -- 14
 header.y = 711 -- 14
@@ -25,7 +25,7 @@ node1:addChild(header) -- 14
 do -- 14
 	header:moveUV(3, 1, Vec2(-185, 0)) -- 16
 	header:moveUV(3, 2, Vec2(-185, 0)) -- 17
-end -- 17
+end -- 14
 local item1 = MovingText{opacity = 0.2, offsetY = 0, fontSize = 100, color3 = 0xffffff, textBG = "FIND MEMBER", y = 711} -- 20
 node1:addChild(item1) -- 20
 local mask = item1.mask -- 21

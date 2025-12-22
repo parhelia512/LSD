@@ -16,7 +16,7 @@ _module_0 = Class(Bubble, { -- 6
 			sleep(time) -- 11
 			self:perform(Opacity(0.5, 1, 0)) -- 12
 			return self:removeFromParent() -- 13
-		end)) -- 13
+		end)) -- 9
 	end -- 6
 }) -- 5
-return _module_0 -- 13
+return _module_0 -- 1

@@ -138,13 +138,13 @@ do -- 74
 		local item = _list_0[_index_0] -- 77
 		item.scaleX = scale -- 78
 		item.scaleY = scale -- 79
-	end -- 79
+	end -- 77
 	do -- 80
 		local _tmp_0 = w / 3000 -- 80
 		topControl.scaleX = _tmp_0 -- 80
 		topControl.scaleY = _tmp_0 -- 80
 	end -- 80
-end -- 80
+end -- 74
 end) -- 75
 return item1 -- 75
 end

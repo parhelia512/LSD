@@ -49,7 +49,7 @@ do -- 34
 	menu:alignItems(30) -- 39
 	ui.infoArea.visible = true -- 40
 	ui.storyArea.visible = false -- 41
-end -- 41
+end -- 34
 end) -- 35
 local btn2 = TabButton{textBG = "INTELLIGENCE", text = "对策"} -- 45
 menu:addChild(btn2) -- 45
@@ -59,7 +59,7 @@ do -- 46
 	menu.selected:emit("Toggle") -- 49
 	menu.selected = btn2 -- 50
 	menu:alignItems(30) -- 51
-end -- 51
+end -- 46
 end) -- 47
 local btn3 = TabButton{textBG = "STORY", text = "故事"} -- 55
 menu:addChild(btn3) -- 55
@@ -71,12 +71,12 @@ do -- 56
 	menu:alignItems(30) -- 61
 	ui.infoArea.visible = false -- 62
 	ui.storyArea.visible = true -- 63
-end -- 63
+end -- 56
 end) -- 57
 do -- 66
 	menu.selected = btn1 -- 68
 	menu:alignItems(30) -- 69
-end -- 69
+end -- 66
 local item4 = AlignNode{alignHeight = "h", alignWidth = "w / 2", vAlign = "Center", hAlign = "Right"} -- 74
 item1:addChild(item4) -- 74
 local scrollArea = AlignNode{vAlign = "Center", hAlign = "Center"} -- 75
@@ -541,12 +541,12 @@ do -- 264
 					return pop:perform(Spawn(Show(), Opacity(0, 0, 1))) -- 292
 				end) -- 290
 				return self:slot("TapEnded", function() -- 293
-					return pop:perform(Sequence(Opacity(0.3, pop.opacity, 0), Hide())) -- 297
-				end) -- 297
+					return pop:perform(Sequence(Opacity(0.3, pop.opacity, 0), Hide())) -- 294
+				end) -- 293
 			end) -- 287
 		end -- 286
-	end -- 297
-end -- 297
+	end -- 266
+end -- 264
 local topControl = AlignNode{vAlign = "Top", hAlign = "Left"} -- 300
 item1:addChild(topControl) -- 300
 local item22 = BackButton{y = -45 - 33.5, x = 100 + 55} -- 301
@@ -577,7 +577,7 @@ do -- 312
 		local item = _list_0[_index_0] -- 317
 		item.scaleX = scale * ratio -- 318
 		item.scaleY = scale * ratio -- 319
-	end -- 319
+	end -- 317
 	local _list_1 = { -- 320
 		bg, -- 320
 		leftControl, -- 320
@@ -591,11 +591,11 @@ do -- 312
 		local item = _list_1[_index_0] -- 320
 		item.scaleX = scale -- 321
 		item.scaleY = scale -- 322
-	end -- 322
+	end -- 320
 	aiArea:adjustSizeWithAlign("Auto", 0, Size(1168, H)) -- 323
 	ui.infoArea:adjustSizeWithAlign("Auto", 0, Size(1042, H)) -- 324
 	ui.storyArea:adjustSizeWithAlign("Auto", 0, Size(1071, H)) -- 325
-end -- 325
+end -- 312
 end) -- 313
 return ui -- 313
 end

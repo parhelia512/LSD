@@ -1,4 +1,4 @@
-// lastSavedUnix: 2025-04-07T09:59:45.181Z
+// lastSavedUnix: 2025-11-01T16:11:19.240Z
 // variables:
 //   - key: charName
 //     value: 瑾
@@ -15,12 +15,14 @@ colorID: 0
 我: 我明白了。我该怎么开始？
 工作人员: 首先，我们需要收集一些基本信息。您的名字是？
 -> 我: 提供姓名信息。
-    <<inputName>>
+	//<<inputName>>
+	<<set $charName to "匿名玩家">>
 工作人员: 了解了，{$charName}。您的性别是？
 -> 我: 男。
-    <<setCharId "charM">>
+	<<setCharId "charM">>
 -> 我: 女。
-    <<setCharId "charF">>
+	<<setCharId "charF">>
 工作人员: 非常感谢，{$charName}。您现在可以开始您的任务了。如果遇到任何问题，请随时与我们联系。
 工作人员: 您会从上一个测试玩家的进度开始强制同步，起初看到混乱的视角和画面都是正常的，现在开始。
+
 ===
