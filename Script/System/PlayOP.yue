@@ -1,4 +1,5 @@
 _ENV = Dora
+import global
 
 const PVInfo = [
 	[3003, 1688, 3.1666667461395] -- 1

@@ -1,4 +1,5 @@
 _ENV = Dora
+import global
 import "Scene.Passage"
 export default Class Passage,
 	__init: =>

@@ -1,4 +1,5 @@
 _ENV = Dora
+import global
 import "UI.View.MessageBox"
 import "UI.Message"
 import "Utils" as :Struct

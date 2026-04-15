@@ -1,6 +1,5 @@
 <Dora>
 	<Import Module="UI.MovingText"/>
-	<Import Module="UI.InputButton"/>
 	<Node X="{ fliped and -80 or 80 }" ScaleX="0.5" ScaleY="0.5" Z="-200">
 		<Node Width="228" Height="67">
 			<Lua>if fliped then</Lua>

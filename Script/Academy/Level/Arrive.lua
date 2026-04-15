@@ -1,88 +1,89 @@
 -- [yue]: Script/Academy/Level/Arrive.yue
-local Director = Dora.Director -- 1
-local Cache = Dora.Cache -- 1
-local Entity = Dora.Entity -- 1
-local _module_0 = Dora.Platformer -- 1
-local Data = _module_0.Data -- 1
-local Vec2 = Dora.Vec2 -- 1
-local threadLoop = Dora.threadLoop -- 1
-local Group = Dora.Group -- 1
-local thread = Dora.thread -- 1
-local sleep = Dora.sleep -- 1
-local Opacity = Dora.Opacity -- 1
-local emit = Dora.emit -- 1
 local _module_0 = nil -- 1
-local AcademyAction = require("Academy.Action") -- 3
-local AcademyAI = require("Academy.AI") -- 4
-local AcademySystem = require("Academy.System") -- 5
-local PreparationRoom = require("Scene.PreparationRoom") -- 6
-local Config = require("Data.Config") -- 7
-local _anon_func_0 = function(self) -- 47
-	local _val_0 = self.name -- 47
-	return "charF" == _val_0 or "charM" == _val_0 -- 47
-end -- 47
-_module_0 = function() -- 9
-	PreparationRoom:loadAsync() -- 10
-	local world = PreparationRoom() -- 11
-	do -- 12
-		local _with_0 = Director.entry -- 12
-		_with_0:removeAllChildren() -- 13
-		Cache:removeUnused("Texture") -- 14
-		_with_0:addChild(world) -- 15
-	end -- 12
-	Director.ui3D:removeAllChildren() -- 16
-	Entity:clear() -- 18
-	Data.store:clear() -- 19
-	Data.store.world = world -- 20
-	AcademyAction() -- 21
-	AcademyAI() -- 22
-	AcademySystem() -- 23
-	world:turnOnLights() -- 25
-	Entity({ -- 28
-		player = true, -- 28
-		name = Config.char, -- 29
-		faceRight = false, -- 30
-		position = Vec2(world.sceneWidth / 2, world.offset), -- 31
-		busy = true, -- 32
-		base = true -- 33
-	}) -- 27
-	Entity({ -- 36
-		player = false, -- 36
-		name = "ninilite", -- 37
-		faceRight = false, -- 38
-		position = Vec2(world.sceneWidth / 2 + 180, world.offset), -- 39
-		busy = true, -- 40
-		base = true -- 41
-	}) -- 35
-	threadLoop(function() -- 43
-		local group = Group({ -- 44
-			"player", -- 44
-			"name", -- 44
-			"unit" -- 44
-		}) -- 44
-		if group.count > 0 then -- 45
-			group:each(function(self) -- 46
-				if _anon_func_0(self) then -- 47
-					world.camera.position = self.unit.position -- 48
-					return world:makeUnitEnter(self.unit, 1, 0) -- 49
-				else -- 51
-					return world:makeUnitEnter(self.unit, 0, -1) -- 51
-				end -- 47
-			end) -- 46
-			return true -- 52
-		end -- 45
-	end) -- 43
-	return thread(function() -- 54
-		sleep(10) -- 55
-		local HUDControl = require("UI.HUDControl") -- 56
-		local _with_0 = HUDControl() -- 57
-		_with_0:addTo(Director.ui3D) -- 58
-		_with_0.visible = false -- 59
-		sleep(1) -- 60
-		_with_0.visible = true -- 61
-		_with_0:perform(Opacity(1, 0, 1)) -- 62
-		emit("HUD.DisplayMove", true) -- 63
-		return _with_0 -- 57
-	end) -- 54
-end -- 9
+local _ENV = Dora(Dora.Platformer) -- 1
+local require <const> = require -- 2
+local Director <const> = Director -- 2
+local Cache <const> = Cache -- 2
+local Entity <const> = Entity -- 2
+local Data <const> = Data -- 2
+local Vec2 <const> = Vec2 -- 2
+local threadLoop <const> = threadLoop -- 2
+local Group <const> = Group -- 2
+local thread <const> = thread -- 2
+local sleep <const> = sleep -- 2
+local Opacity <const> = Opacity -- 2
+local emit <const> = emit -- 2
+local AcademyAction = require("Academy.Action") -- 4
+local AcademyAI = require("Academy.AI") -- 5
+local AcademySystem = require("Academy.System") -- 6
+local PreparationRoom = require("Scene.PreparationRoom") -- 7
+local Config = require("Data.Config") -- 8
+local _anon_func_0 = function(self) -- 48
+	local _val_0 = self.name -- 48
+	return "charF" == _val_0 or "charM" == _val_0 -- 48
+end -- 48
+_module_0 = function() -- 10
+	PreparationRoom:loadAsync() -- 11
+	local world = PreparationRoom() -- 12
+	do -- 13
+		local _with_0 = Director.entry -- 13
+		_with_0:removeAllChildren() -- 14
+		Cache:removeUnused("Texture") -- 15
+		_with_0:addChild(world) -- 16
+	end -- 13
+	Director.ui3D:removeAllChildren() -- 17
+	Entity:clear() -- 19
+	Data.store:clear() -- 20
+	Data.store.world = world -- 21
+	AcademyAction() -- 22
+	AcademyAI() -- 23
+	AcademySystem() -- 24
+	world:turnOnLights() -- 26
+	Entity({ -- 29
+		player = true, -- 29
+		name = Config.char, -- 30
+		faceRight = false, -- 31
+		position = Vec2(world.sceneWidth / 2, world.offset), -- 32
+		busy = true, -- 33
+		base = true -- 34
+	}) -- 28
+	Entity({ -- 37
+		player = false, -- 37
+		name = "ninilite", -- 38
+		faceRight = false, -- 39
+		position = Vec2(world.sceneWidth / 2 + 180, world.offset), -- 40
+		busy = true, -- 41
+		base = true -- 42
+	}) -- 36
+	threadLoop(function() -- 44
+		local group = Group({ -- 45
+			"player", -- 45
+			"name", -- 45
+			"unit" -- 45
+		}) -- 45
+		if group.count > 0 then -- 46
+			group:each(function(self) -- 47
+				if _anon_func_0(self) then -- 48
+					world.camera.position = self.unit.position -- 49
+					return world:makeUnitEnter(self.unit, 1, 0) -- 50
+				else -- 52
+					return world:makeUnitEnter(self.unit, 0, -1) -- 52
+				end -- 48
+			end) -- 47
+			return true -- 53
+		end -- 46
+	end) -- 44
+	return thread(function() -- 55
+		sleep(10) -- 56
+		local HUDControl = require("UI.HUDControl") -- 57
+		local _with_0 = HUDControl() -- 58
+		_with_0:addTo(Director.ui3D) -- 59
+		_with_0.visible = false -- 60
+		sleep(1) -- 61
+		_with_0.visible = true -- 62
+		_with_0:perform(Opacity(1, 0, 1)) -- 63
+		emit("HUD.DisplayMove", true) -- 64
+		return _with_0 -- 58
+	end) -- 55
+end -- 10
 return _module_0 -- 1

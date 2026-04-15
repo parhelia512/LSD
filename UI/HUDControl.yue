@@ -1,4 +1,5 @@
 _ENV = Dora
+import global
 import "UI.View.HUDControl"
 
 export default Class HUDControl,

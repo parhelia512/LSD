@@ -8,13 +8,74 @@
 
 ------
 
+## 项目简介
+
+《灵数奇缘》是一款基于 [Dora SSR](https://github.com/IppClub/Dora-SSR) 引擎开发的 2D 游戏项目。项目采用 Yue Script 脚本语言编写，使用 Spine 动画技术，包含完整的游戏系统、UI 界面和音乐资源。
+
+## 项目结构
+
+```
+├── init.yue              # 入口文件，负责环境初始化和资源路径设置
+├── Start.yue             # 主启动文件，初始化数据库和游戏流程
+├── Script/               # 游戏脚本目录
+│   ├── System/          # 系统脚本（开场动画、对话等）
+│   ├── Scene/           # 场景脚本（休息室、训练场等）
+│   ├── Academy/         # 学院关卡脚本
+│   └── Control.yue      # 控制脚本
+├── UI/                   # 用户界面文件
+│   ├── *.yue            # Yue 脚本格式的 UI 组件
+│   ├── *.xml            # XML 格式的 UI 布局文件
+│   └── View/            # 视图组件
+├── Data/                 # 游戏数据目录
+│   ├── Config.tl        # 游戏配置文件
+│   └── *.json           # JSON 格式的数据文件
+├── Spine/                # Spine 动画资源目录
+├── Image/                # 图像资源目录
+├── Music/                # 音乐资源目录
+├── Font/                 # 字体文件目录
+└── Test/                 # 测试用例目录
+```
+
+## 开发环境配置
+
+### 必备工具
+
+1. **Dora SSR 引擎**：从 [Dora-SSR](https://github.com/IppClub/Dora-SSR) 获取
+2. **Spine 动画资源**：根据需要从以下仓库获取：
+   - 普通分辨率：[LSD-spine-1x](https://github.com/IppClub/LSD-spine-1x)
+   - 高清分辨率：[LSD-spine-2x](https://github.com/IppClub/LSD-spine-2x)
+
+### 运行步骤
+
+1. 克隆或下载本项目
+2. 将 Spine 动画资源复制到 `Spine/` 目录
+3. 通过 Web IDE 将项目上传至 Dora-SSR
+4. 在 Dora-SSR 中运行和测试
+
+## 配置说明
+
+游戏的主要配置位于 `Data/Config.tl` 文件中，常用配置项包括：
+
+- **skipOP**：控制是否跳过开场动画
+  - `0` - 播放开场动画（默认）
+  - `1` - 跳过开场动画
+
+## 主要功能
+
+- 完整的游戏流程（开场动画 → 教程关卡 → 游戏主界面）
+- 丰富的 UI 系统（对话框、状态栏、技能面板等）
+- Spine 动画支持
+- 场景系统（休息室、训练场、学院关卡等）
+- 战斗和技能系统
+- 角色成长系统
+
+![Gameplay RTT](Image/gameplay-RTT.jpg)
+
 ## 开发测试使用说明
 
 * Spine 目录下的资源请按需从 [LSD-spine-1x](https://github.com/IppClub/LSD-spine-1x.git) 或是 [LSD-spine-2x](https://github.com/IppClub/LSD-spine-2x) 仓库获取普通或是高清分辨率的美术素材，复制到该目录下使用。
 
-* 克隆或是下载项目，然后将该项目通过 Web IDE 上传至[Dora-SSR](https://github.com/IppClub/Dora-SSR)中。然后进行运行和测试。
-
-![Gameplay RTT](Image/gameplay-RTT.jpg)
+* 克隆或是下载项目，然后将该项目通过 Web IDE 上传至 [Dora-SSR](https://github.com/IppClub/Dora-SSR) 中。然后进行运行和测试。
 
 ## 美术、音乐素材版权
 
@@ -25,3 +86,8 @@
 ## 程序代码授权
 
 MIT
+
+## 致谢
+
+- 感谢 [IppClub](https://ippclub.org) 提供的技术支持
+- 感谢《灵数奇缘》社区提供的美术和音乐资源

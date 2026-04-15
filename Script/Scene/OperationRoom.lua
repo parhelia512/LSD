@@ -1,319 +1,320 @@
 -- [yue]: Script/Scene/OperationRoom.yue
-local Spine = Dora.Spine -- 1
-local Class = Dora.Class -- 1
-local property = Dora.property -- 1
-local Vec2 = Dora.Vec2 -- 1
-local Sprite = Dora.Sprite -- 1
-local View = Dora.View -- 1
-local Rect = Dora.Rect -- 1
-local _module_0 = Dora.Platformer -- 1
-local PlatformWorld = _module_0.PlatformWorld -- 1
-local BodyDef = Dora.BodyDef -- 1
-local Body = Dora.Body -- 1
-local Data = _module_0.Data -- 1
-local Array = Dora.Array -- 1
-local Cache = Dora.Cache -- 1
 local _module_0 = nil -- 1
-local Map = require("Academy.Map") -- 2
-local W <const> = 3554 -- 4
-local HW <const> = W / 2 -- 5
-local H <const> = 1080 -- 6
-local HH <const> = H / 2 -- 7
-local Offset <const> = 0 -- 8
-local BackZ <const> = 470 -- 9
-local ZOffset <const> = BackZ / 2 - 50 -- 10
-local PathOffset <const> = 50 -- 11
-local MaxPath <const> = 2 -- 12
-local DefaultZoom <const> = 0.5 -- 13
-local SceneName <const> = "OperationRoom" -- 14
-local layerDefs = { -- 23
-	{ -- 23
-		look = "lantern", -- 23
-		order = 100, -- 23
-		x = W * (1.0 - DefaultZoom) / 2, -- 23
-		scale = DefaultZoom -- 23
-	}, -- 23
+local _ENV = Dora(Dora.Platformer) -- 1
+local require <const> = require -- 2
+local Spine <const> = Spine -- 2
+local Class <const> = Class -- 2
+local property <const> = property -- 2
+local Vec2 <const> = Vec2 -- 2
+local Sprite <const> = Sprite -- 2
+local View <const> = View -- 2
+local Rect <const> = Rect -- 2
+local PlatformWorld <const> = PlatformWorld -- 2
+local BodyDef <const> = BodyDef -- 2
+local Body <const> = Body -- 2
+local Data <const> = Data -- 2
+local Array <const> = Array -- 2
+local Cache <const> = Cache -- 2
+local Map = require("Academy.Map") -- 3
+local W <const> = 3554 -- 5
+local HW <const> = W / 2 -- 6
+local H <const> = 1080 -- 7
+local HH <const> = H / 2 -- 8
+local Offset <const> = 0 -- 9
+local BackZ <const> = 470 -- 10
+local ZOffset <const> = BackZ / 2 - 50 -- 11
+local PathOffset <const> = 50 -- 12
+local MaxPath <const> = 2 -- 13
+local DefaultZoom <const> = 0.5 -- 14
+local SceneName <const> = "OperationRoom" -- 15
+local layerDefs = { -- 24
 	{ -- 24
-		look = "chairLR", -- 24
-		order = -100, -- 24
-		z = ZOffset + 100 -- 24
+		look = "lantern", -- 24
+		order = 100, -- 24
+		x = W * (1.0 - DefaultZoom) / 2, -- 24
+		scale = DefaultZoom -- 24
 	}, -- 24
 	{ -- 25
-		look = "chaircenter", -- 25
-		order = -101, -- 25
+		look = "chairLR", -- 25
+		order = -100, -- 25
 		z = ZOffset + 100 -- 25
 	}, -- 25
 	{ -- 26
-		look = "curtainL", -- 26
-		order = -102, -- 26
-		z = BackZ - 100 -- 26
+		look = "chaircenter", -- 26
+		order = -101, -- 26
+		z = ZOffset + 100 -- 26
 	}, -- 26
 	{ -- 27
-		look = "curtainR", -- 27
-		order = -103, -- 27
+		look = "curtainL", -- 27
+		order = -102, -- 27
 		z = BackZ - 100 -- 27
 	}, -- 27
 	{ -- 28
-		look = "control", -- 28
-		order = -104, -- 28
-		z = BackZ - 50 -- 28
+		look = "curtainR", -- 28
+		order = -103, -- 28
+		z = BackZ - 100 -- 28
 	}, -- 28
 	{ -- 29
-		look = "leftwall", -- 29
-		order = -105, -- 29
-		angleY = -90 -- 29
+		look = "control", -- 29
+		order = -104, -- 29
+		z = BackZ - 50 -- 29
 	}, -- 29
 	{ -- 30
-		look = "rightwall", -- 30
-		order = -106, -- 30
-		x = W, -- 30
-		angleY = 90 -- 30
+		look = "leftwall", -- 30
+		order = -105, -- 30
+		angleY = -90 -- 30
 	}, -- 30
 	{ -- 31
-		look = "closetL", -- 31
-		order = -107, -- 31
-		z = BackZ -- 31
+		look = "rightwall", -- 31
+		order = -106, -- 31
+		x = W, -- 31
+		angleY = 90 -- 31
 	}, -- 31
 	{ -- 32
-		look = "closetR", -- 32
-		order = -108, -- 32
+		look = "closetL", -- 32
+		order = -107, -- 32
 		z = BackZ -- 32
 	}, -- 32
 	{ -- 33
-		look = "device", -- 33
-		order = -109, -- 33
+		look = "closetR", -- 33
+		order = -108, -- 33
 		z = BackZ -- 33
 	}, -- 33
 	{ -- 34
-		look = "backcurtain", -- 34
-		order = -110, -- 34
-		z = BackZ + 80 -- 34
+		look = "device", -- 34
+		order = -109, -- 34
+		z = BackZ -- 34
 	}, -- 34
 	{ -- 35
-		look = "floor", -- 35
-		order = -111, -- 35
-		angleX = 90 -- 35
+		look = "backcurtain", -- 35
+		order = -110, -- 35
+		z = BackZ + 80 -- 35
 	}, -- 35
 	{ -- 36
-		look = "back", -- 36
-		order = -112, -- 36
-		z = BackZ + 150 -- 36
-	} -- 36
-} -- 22
-local addLayer -- 38
-addLayer = function(world, def) -- 38
-	local layer -- 39
-	do -- 39
-		local _with_0 = Spine("operationRoom") -- 39
-		_with_0.look = def.look -- 40
-		_with_0.order = def.order -- 41
-		_with_0.scaleX = def.scale or 1.0 -- 42
-		_with_0.scaleY = def.scale or 1.0 -- 43
-		_with_0.x = def.x or 0 -- 44
-		_with_0.y = def.y or 0 -- 45
-		_with_0.z = def.z or 0 -- 46
-		_with_0.angleX = def.angleX or 0 -- 47
-		_with_0.angleY = def.angleY or 0 -- 48
-		_with_0.x = def.x or 0 -- 49
-		layer = _with_0 -- 39
-	end -- 39
-	if def.ratio then -- 50
-		world:setLayerRatio(def.order, def.ratio) -- 51
-	end -- 50
-	if def.offset then -- 52
-		world:setLayerOffset(def.order, def.offset) -- 53
-	end -- 52
-	world:addChild(layer) -- 54
-	if def.handle then -- 55
-		def.handle(layer) -- 55
-	end -- 55
-	return layer -- 56
-end -- 38
-_module_0 = Class({ -- 59
-	sceneWidth = property(function() -- 59
-		return W -- 59
-	end), -- 59
-	offset = property(function() -- 60
-		return Offset -- 60
+		look = "floor", -- 36
+		order = -111, -- 36
+		angleX = 90 -- 36
+	}, -- 36
+	{ -- 37
+		look = "back", -- 37
+		order = -112, -- 37
+		z = BackZ + 150 -- 37
+	} -- 37
+} -- 23
+local addLayer -- 39
+addLayer = function(world, def) -- 39
+	local layer -- 40
+	do -- 40
+		local _with_0 = Spine("operationRoom") -- 40
+		_with_0.look = def.look -- 41
+		_with_0.order = def.order -- 42
+		_with_0.scaleX = def.scale or 1.0 -- 43
+		_with_0.scaleY = def.scale or 1.0 -- 44
+		_with_0.x = def.x or 0 -- 45
+		_with_0.y = def.y or 0 -- 46
+		_with_0.z = def.z or 0 -- 47
+		_with_0.angleX = def.angleX or 0 -- 48
+		_with_0.angleY = def.angleY or 0 -- 49
+		_with_0.x = def.x or 0 -- 50
+		layer = _with_0 -- 40
+	end -- 40
+	if def.ratio then -- 51
+		world:setLayerRatio(def.order, def.ratio) -- 52
+	end -- 51
+	if def.offset then -- 53
+		world:setLayerOffset(def.order, def.offset) -- 54
+	end -- 53
+	world:addChild(layer) -- 55
+	if def.handle then -- 56
+		def.handle(layer) -- 56
+	end -- 56
+	return layer -- 57
+end -- 39
+_module_0 = Class({ -- 60
+	sceneWidth = property(function() -- 60
+		return W -- 60
 	end), -- 60
-	left = property(function(self) -- 61
-		return Vec2(100, self.offset) -- 61
+	offset = property(function() -- 61
+		return Offset -- 61
 	end), -- 61
-	right = property(function(self) -- 62
-		return Vec2(self.sceneWidth - 100, self.offset) -- 62
+	left = property(function(self) -- 62
+		return Vec2(100, self.offset) -- 62
 	end), -- 62
-	addShadowTo = function(self, unit) -- 64
-		local _with_0 = Sprite("Image/shadow1.png") -- 65
-		_with_0.angleX = 90 -- 66
-		_with_0.order = -1 -- 67
-		_with_0:schedule(function() -- 68
-			_with_0.y = self.offset - unit.y -- 68
-		end) -- 68
-		_with_0:addTo(unit) -- 69
-		return _with_0 -- 65
-	end, -- 64
-	openLeftDoor = function(self) -- 71
-		local _with_0 = self._layers.leftwall -- 71
-		_with_0.opened = true -- 72
-		_with_0.recovery = 0 -- 73
-		_with_0:play("openLI") -- 74
-		return _with_0 -- 71
-	end, -- 71
-	openRightDoor = function(self) -- 76
-		local _with_0 = self._layers.rightwall -- 76
-		_with_0.opened = true -- 77
-		_with_0.recovery = 0 -- 78
-		_with_0:play("openRI") -- 79
-		return _with_0 -- 76
-	end, -- 76
-	zoom = property(function(self) -- 81
-		return self._zoom -- 81
-	end, function(self, value) -- 82
-		self._zoom = value -- 83
-		return self:updateZoom() -- 84
-	end), -- 81
-	updateZoom = function(self) -- 86
-		local actualZoom = self._zoom * DefaultZoom -- 87
-		do -- 88
-			local _with_0 = self._layers.lantern -- 88
-			_with_0.x = W * (1.0 - actualZoom) / 2 -- 89
-			_with_0.scaleX = actualZoom -- 90
-			_with_0.scaleY = actualZoom -- 91
-		end -- 88
-		local width, height -- 92
-		do -- 92
-			local _obj_0 = View.size -- 92
-			width, height = _obj_0.width, _obj_0.height -- 92
-		end -- 92
-		local zoom = height / H / actualZoom -- 93
-		if width > W * zoom then -- 94
-			zoom = width / W -- 95
-		end -- 94
-		local _with_0 = self.camera -- 96
-		_with_0.zoom = zoom -- 97
-		_with_0.boundary = Rect(0, 0, W, H * actualZoom) -- 98
-		return _with_0 -- 96
-	end, -- 86
-	__partial = function(_) -- 100
-		local _with_0 = PlatformWorld() -- 101
-		_with_0.camera.followRatio = Vec2(0.03, 0.03) -- 102
-		_with_0.tag = "OperationRoom" -- 103
-		return _with_0 -- 101
-	end, -- 100
-	__init = function(self) -- 105
-		for i = -MaxPath, MaxPath do -- 106
-			local _with_0 = self:getLayer(i) -- 107
-			_with_0.z = ZOffset - PathOffset * i -- 108
-		end -- 106
-		do -- 110
-			local _tbl_0 = { } -- 110
-			for _index_0 = 1, #layerDefs do -- 110
-				local def = layerDefs[_index_0] -- 110
-				_tbl_0[def.look] = addLayer(self, def) -- 110
-			end -- 110
-			self._layers = _tbl_0 -- 110
-		end -- 110
-		local LeftDoorSensor <const> = 0 -- 112
-		local RightDoorSensor <const> = 1 -- 113
-		local terrainDef -- 114
-		do -- 114
-			local _with_0 = BodyDef() -- 114
-			_with_0.type = "Static" -- 115
-			_with_0:attachPolygon(Vec2(HW, 0), W, 10, 0, 1, 1, 0) -- 116
-			_with_0:attachPolygon(Vec2(HW, H), W, 10, 0, 1, 1, 0) -- 117
-			_with_0:attachPolygon(Vec2(0, HH), 10, H, 0, 1, 1, 0) -- 118
-			_with_0:attachPolygon(Vec2(W, HH), 10, H, 0, 1, 1, 0) -- 119
-			_with_0:attachPolygonSensor(LeftDoorSensor, Vec2(75, 175), 150, 350) -- 120
-			_with_0:attachPolygonSensor(RightDoorSensor, Vec2(W - 75, 175), 150, 350) -- 121
-			_with_0.position = Vec2(0, Offset) -- 122
-			terrainDef = _with_0 -- 114
-		end -- 114
-		self._layers.leftwall.opened = false -- 124
-		self._layers.rightwall.opened = false -- 125
-		local DoorSpeed <const> = 1.5 -- 126
-		do -- 127
-			local _with_0 = Body(terrainDef, self, Vec2.zero) -- 127
-			_with_0.group = Data.groupTerrain -- 128
-			_with_0:slot("BodyEnter", function(body, sensorTag) -- 129
-				if not body.entity then -- 130
-					return -- 130
-				end -- 130
-				if not body.entity.player then -- 131
+	right = property(function(self) -- 63
+		return Vec2(self.sceneWidth - 100, self.offset) -- 63
+	end), -- 63
+	addShadowTo = function(self, unit) -- 65
+		local _with_0 = Sprite("Image/shadow1.png") -- 66
+		_with_0.angleX = 90 -- 67
+		_with_0.order = -1 -- 68
+		_with_0:schedule(function() -- 69
+			_with_0.y = self.offset - unit.y -- 69
+		end) -- 69
+		_with_0:addTo(unit) -- 70
+		return _with_0 -- 66
+	end, -- 65
+	openLeftDoor = function(self) -- 72
+		local _with_0 = self._layers.leftwall -- 72
+		_with_0.opened = true -- 73
+		_with_0.recovery = 0 -- 74
+		_with_0:play("openLI") -- 75
+		return _with_0 -- 72
+	end, -- 72
+	openRightDoor = function(self) -- 77
+		local _with_0 = self._layers.rightwall -- 77
+		_with_0.opened = true -- 78
+		_with_0.recovery = 0 -- 79
+		_with_0:play("openRI") -- 80
+		return _with_0 -- 77
+	end, -- 77
+	zoom = property(function(self) -- 82
+		return self._zoom -- 82
+	end, function(self, value) -- 83
+		self._zoom = value -- 84
+		return self:updateZoom() -- 85
+	end), -- 82
+	updateZoom = function(self) -- 87
+		local actualZoom = self._zoom * DefaultZoom -- 88
+		do -- 89
+			local _with_0 = self._layers.lantern -- 89
+			_with_0.x = W * (1.0 - actualZoom) / 2 -- 90
+			_with_0.scaleX = actualZoom -- 91
+			_with_0.scaleY = actualZoom -- 92
+		end -- 89
+		local width, height -- 93
+		do -- 93
+			local _obj_0 = View.size -- 93
+			width, height = _obj_0.width, _obj_0.height -- 93
+		end -- 93
+		local zoom = height / H / actualZoom -- 94
+		if width > W * zoom then -- 95
+			zoom = width / W -- 96
+		end -- 95
+		local _with_0 = self.camera -- 97
+		_with_0.zoom = zoom -- 98
+		_with_0.boundary = Rect(0, 0, W, H * actualZoom) -- 99
+		return _with_0 -- 97
+	end, -- 87
+	__partial = function(_) -- 101
+		local _with_0 = PlatformWorld() -- 102
+		_with_0.camera.followRatio = Vec2(0.03, 0.03) -- 103
+		_with_0.tag = "OperationRoom" -- 104
+		return _with_0 -- 102
+	end, -- 101
+	__init = function(self) -- 106
+		for i = -MaxPath, MaxPath do -- 107
+			local _with_0 = self:getLayer(i) -- 108
+			_with_0.z = ZOffset - PathOffset * i -- 109
+		end -- 107
+		do -- 111
+			local _tbl_0 = { } -- 111
+			for _index_0 = 1, #layerDefs do -- 111
+				local def = layerDefs[_index_0] -- 111
+				_tbl_0[def.look] = addLayer(self, def) -- 111
+			end -- 111
+			self._layers = _tbl_0 -- 111
+		end -- 111
+		local LeftDoorSensor <const> = 0 -- 113
+		local RightDoorSensor <const> = 1 -- 114
+		local terrainDef -- 115
+		do -- 115
+			local _with_0 = BodyDef() -- 115
+			_with_0.type = "Static" -- 116
+			_with_0:attachPolygon(Vec2(HW, 0), W, 10, 0, 1, 1, 0) -- 117
+			_with_0:attachPolygon(Vec2(HW, H), W, 10, 0, 1, 1, 0) -- 118
+			_with_0:attachPolygon(Vec2(0, HH), 10, H, 0, 1, 1, 0) -- 119
+			_with_0:attachPolygon(Vec2(W, HH), 10, H, 0, 1, 1, 0) -- 120
+			_with_0:attachPolygonSensor(LeftDoorSensor, Vec2(75, 175), 150, 350) -- 121
+			_with_0:attachPolygonSensor(RightDoorSensor, Vec2(W - 75, 175), 150, 350) -- 122
+			_with_0.position = Vec2(0, Offset) -- 123
+			terrainDef = _with_0 -- 115
+		end -- 115
+		self._layers.leftwall.opened = false -- 125
+		self._layers.rightwall.opened = false -- 126
+		local DoorSpeed <const> = 1.5 -- 127
+		do -- 128
+			local _with_0 = Body(terrainDef, self, Vec2.zero) -- 128
+			_with_0.group = Data.groupTerrain -- 129
+			_with_0:slot("BodyEnter", function(body, sensorTag) -- 130
+				if not body.entity then -- 131
 					return -- 131
 				end -- 131
-				local door, animation, route -- 132
-				if LeftDoorSensor == sensorTag then -- 133
-					door, animation, route = self._layers.leftwall, "openL", "left" -- 134
-				elseif RightDoorSensor == sensorTag then -- 135
-					door, animation, route = self._layers.rightwall, "openR", "right" -- 136
+				if not body.entity.player then -- 132
+					return -- 132
 				end -- 132
-				local name, enter, targets = Map.getRoute(SceneName, route) -- 137
-				if name then -- 137
-					do -- 138
-						local _with_1 = body.entity -- 138
-						if body.velocityX == 0 then -- 139
-							_with_1.moveFromRight = route ~= "right" -- 139
-						else -- 139
-							_with_1.moveFromRight = body.velocityX < 0 -- 139
-						end -- 139
-						_with_1.moveRouteName = name -- 140
-						_with_1.moveEnter = enter -- 141
-						_with_1.moveTargets = Array(targets) -- 142
-					end -- 138
-					if #targets > 0 and not door.opened then -- 143
-						door.opened = true -- 145
-						door.recovery = 1 -- 146
-						door.speed = DoorSpeed -- 147
-						door:play(animation) -- 148
-						return door -- 144
-					end -- 143
-				end -- 137
-			end) -- 129
-			_with_0:slot("BodyLeave", function(body, sensorTag) -- 149
-				if not body.entity then -- 150
-					return -- 150
-				end -- 150
-				if not body.entity.player then -- 151
+				local door, animation, route -- 133
+				if LeftDoorSensor == sensorTag then -- 134
+					door, animation, route = self._layers.leftwall, "openL", "left" -- 135
+				elseif RightDoorSensor == sensorTag then -- 136
+					door, animation, route = self._layers.rightwall, "openR", "right" -- 137
+				end -- 133
+				local name, enter, targets = Map.getRoute(SceneName, route) -- 138
+				if name then -- 138
+					do -- 139
+						local _with_1 = body.entity -- 139
+						if body.velocityX == 0 then -- 140
+							_with_1.moveFromRight = route ~= "right" -- 140
+						else -- 140
+							_with_1.moveFromRight = body.velocityX < 0 -- 140
+						end -- 140
+						_with_1.moveRouteName = name -- 141
+						_with_1.moveEnter = enter -- 142
+						_with_1.moveTargets = Array(targets) -- 143
+					end -- 139
+					if #targets > 0 and not door.opened then -- 144
+						door.opened = true -- 146
+						door.recovery = 1 -- 147
+						door.speed = DoorSpeed -- 148
+						door:play(animation) -- 149
+						return door -- 145
+					end -- 144
+				end -- 138
+			end) -- 130
+			_with_0:slot("BodyLeave", function(body, sensorTag) -- 150
+				if not body.entity then -- 151
 					return -- 151
 				end -- 151
-				if not body.entity.moveTargets then -- 152
+				if not body.entity.player then -- 152
 					return -- 152
 				end -- 152
-				local available = not body.entity.moveTargets.empty -- 153
-				do -- 154
-					local _with_1 = body.entity -- 154
-					_with_1.moveFromRight = nil -- 155
-					_with_1.moveRouteName = nil -- 156
-					_with_1.moveEnter = nil -- 157
-					_with_1.moveTargets = nil -- 158
-				end -- 154
-				if not available then -- 159
-					return -- 159
-				end -- 159
-				local door, animation -- 160
-				if LeftDoorSensor == sensorTag then -- 161
-					door, animation = self._layers.leftwall, "closeL" -- 162
-				elseif RightDoorSensor == sensorTag then -- 163
-					door, animation = self._layers.rightwall, "closeR" -- 164
+				if not body.entity.moveTargets then -- 153
+					return -- 153
+				end -- 153
+				local available = not body.entity.moveTargets.empty -- 154
+				do -- 155
+					local _with_1 = body.entity -- 155
+					_with_1.moveFromRight = nil -- 156
+					_with_1.moveRouteName = nil -- 157
+					_with_1.moveEnter = nil -- 158
+					_with_1.moveTargets = nil -- 159
+				end -- 155
+				if not available then -- 160
+					return -- 160
 				end -- 160
-				door.opened = false -- 166
-				door.recovery = 1 -- 167
-				door.speed = DoorSpeed -- 168
-				door:play(animation) -- 169
-				return door -- 165
-			end) -- 149
-			_with_0:addTo(self) -- 170
-		end -- 127
-		self._zoom = 1.0 -- 172
-		self:gslot("AppChange", function(settingName) -- 173
-			if settingName == "Size" then -- 173
-				return self:updateZoom() -- 173
-			end -- 173
-		end) -- 173
-		return self:updateZoom() -- 174
-	end, -- 105
-	loadAsync = function(_) -- 176
-		return Cache:loadAsync("spine:operationRoom") -- 176
-	end -- 176
-}) -- 58
+				local door, animation -- 161
+				if LeftDoorSensor == sensorTag then -- 162
+					door, animation = self._layers.leftwall, "closeL" -- 163
+				elseif RightDoorSensor == sensorTag then -- 164
+					door, animation = self._layers.rightwall, "closeR" -- 165
+				end -- 161
+				door.opened = false -- 167
+				door.recovery = 1 -- 168
+				door.speed = DoorSpeed -- 169
+				door:play(animation) -- 170
+				return door -- 166
+			end) -- 150
+			_with_0:addTo(self) -- 171
+		end -- 128
+		self._zoom = 1.0 -- 173
+		self:gslot("AppChange", function(settingName) -- 174
+			if settingName == "Size" then -- 174
+				return self:updateZoom() -- 174
+			end -- 174
+		end) -- 174
+		return self:updateZoom() -- 175
+	end, -- 106
+	loadAsync = function(_) -- 177
+		return Cache:loadAsync("spine:operationRoom") -- 177
+	end -- 177
+}) -- 59
 return _module_0 -- 1

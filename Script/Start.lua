@@ -1,29 +1,31 @@
 -- [yue]: Script/Start.yue
-local DB = Dora.DB -- 1
-local Path = Dora.Path -- 1
-local Content = Dora.Content -- 1
-local tostring = _G.tostring -- 1
-local Director = Dora.Director -- 1
-local once = Dora.once -- 1
-if not DB:existDB("lsd") then -- 3
-	local dbPath = Path(Content.writablePath, "lsd.db") -- 4
-	DB:exec("ATTACH DATABASE '" .. tostring(dbPath) .. "' AS lsd;") -- 5
-end -- 3
-Director.entry:slot("Cleanup", function() -- 6
-	return DB:exec("DETACH DATABASE lsd") -- 6
-end) -- 6
-return Director.entry:schedule(once(function() -- 8
-	local Config = require("Data.Config") -- 9
-	Config:loadAsync() -- 10
-	Config.skipOP = 0 -- 11
-	Config.char = "charM" -- 12
-	Config.charName = "瑾" -- 13
-	Config.heroine = "于灵" -- 14
-	if Config.skipOP == nil or Config.skipOP == 0 then -- 16
-		Config.skipOP = 1 -- 17
-		local PlayOP = require("System.PlayOP") -- 18
-		PlayOP() -- 19
-	end -- 16
-	local TutorialLevel = require("Tutorial.Level") -- 21
-	return TutorialLevel() -- 22
-end)) -- 8
+local _ENV = Dora -- 1
+local DB <const> = DB -- 2
+local Path <const> = Path -- 2
+local Content <const> = Content -- 2
+local tostring <const> = tostring -- 2
+local Director <const> = Director -- 2
+local once <const> = once -- 2
+local require <const> = require -- 2
+if not DB:existDB("lsd") then -- 4
+	local dbPath = Path(Content.writablePath, "lsd.db") -- 5
+	DB:exec("ATTACH DATABASE '" .. tostring(dbPath) .. "' AS lsd;") -- 6
+end -- 4
+Director.entry:slot("Cleanup", function() -- 7
+	return DB:exec("DETACH DATABASE lsd") -- 7
+end) -- 7
+return Director.entry:schedule(once(function() -- 9
+	local Config = require("Data.Config") -- 10
+	Config:loadAsync() -- 11
+	Config.skipOP = 0 -- 12
+	Config.char = "charM" -- 13
+	Config.charName = "瑾" -- 14
+	Config.heroine = "于灵" -- 15
+	if Config.skipOP == nil or Config.skipOP == 0 then -- 17
+		Config.skipOP = 1 -- 18
+		local PlayOP = require("System.PlayOP") -- 19
+		PlayOP() -- 20
+	end -- 17
+	local TutorialLevel = require("Tutorial.Level") -- 22
+	return TutorialLevel() -- 23
+end)) -- 9

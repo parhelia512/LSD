@@ -55,3 +55,4 @@ DerivedData/
 .vscode/
 
 Spine/
+.agent/

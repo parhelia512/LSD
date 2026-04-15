@@ -1,4 +1,5 @@
 _ENV = Dora Dora.Platformer
+import global
 
 const W = 11520
 const HW = W / 2

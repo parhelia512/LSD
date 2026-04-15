@@ -1,4 +1,5 @@
 import "Platformer" as :Data
+import global
 
 routes =
 	LoopTowerInitial:

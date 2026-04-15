@@ -1,7 +1,8 @@
 _ENV = Dora
+import global
 
 if scriptPath := Path\getScriptPath ...
-	for path in *[
+	for path in *[ 
 			scriptPath
 			Path scriptPath, "Script"
 			Path scriptPath, "Spine"

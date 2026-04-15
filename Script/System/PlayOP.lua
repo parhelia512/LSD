@@ -1,241 +1,243 @@
 -- [yue]: Script/System/PlayOP.yue
-local View = Dora.View -- 1
-local Director = Dora.Director -- 1
-local Color = Dora.Color -- 1
-local Cache = Dora.Cache -- 1
-local tostring = _G.tostring -- 1
-local Playable = Dora.Playable -- 1
-local once = Dora.once -- 1
-local Audio = Dora.Audio -- 1
-local sleep = Dora.sleep -- 1
-local wait = Dora.wait -- 1
 local _module_0 = nil -- 1
-local PVInfo -- 3
-PVInfo = { -- 4
-	{ -- 4
-		3003, -- 4
-		1688, -- 4
-		3.1666667461395 -- 4
-	}, -- 4
+local _ENV = Dora -- 1
+local View <const> = View -- 2
+local Director <const> = Director -- 2
+local Color <const> = Color -- 2
+local Cache <const> = Cache -- 2
+local tostring <const> = tostring -- 2
+local Playable <const> = Playable -- 2
+local once <const> = once -- 2
+local Audio <const> = Audio -- 2
+local sleep <const> = sleep -- 2
+local require <const> = require -- 2
+local wait <const> = wait -- 2
+local PVInfo -- 4
+PVInfo = { -- 5
 	{ -- 5
-		3000, -- 5
-		1686, -- 5
-		4.0 -- 5
+		3003, -- 5
+		1688, -- 5
+		3.1666667461395 -- 5
 	}, -- 5
 	{ -- 6
-		3013, -- 6
-		1699, -- 6
-		4.2666668891907 -- 6
+		3000, -- 6
+		1686, -- 6
+		4.0 -- 6
 	}, -- 6
 	{ -- 7
-		2988, -- 7
-		1700, -- 7
-		5.0000004768372 -- 7
+		3013, -- 7
+		1699, -- 7
+		4.2666668891907 -- 7
 	}, -- 7
 	{ -- 8
-		3017, -- 8
-		1704, -- 8
-		5.3333334922791 -- 8
+		2988, -- 8
+		1700, -- 8
+		5.0000004768372 -- 8
 	}, -- 8
 	{ -- 9
-		3021, -- 9
+		3017, -- 9
 		1704, -- 9
-		5.0000004768372 -- 9
+		5.3333334922791 -- 9
 	}, -- 9
 	{ -- 10
-		3018, -- 10
-		1703, -- 10
-		2.8333334922791 -- 10
+		3021, -- 10
+		1704, -- 10
+		5.0000004768372 -- 10
 	}, -- 10
 	{ -- 11
 		3018, -- 11
-		1706, -- 11
-		3.0000002384186, -- 11
-		0.1 -- 11
+		1703, -- 11
+		2.8333334922791 -- 11
 	}, -- 11
 	{ -- 12
-		3020, -- 12
-		1707, -- 12
-		3.0000002384186 -- 12
+		3018, -- 12
+		1706, -- 12
+		3.0000002384186, -- 12
+		0.1 -- 12
 	}, -- 12
 	{ -- 13
-		1162, -- 13
-		656, -- 13
-		4.1666669845581 -- 13
+		3020, -- 13
+		1707, -- 13
+		3.0000002384186 -- 13
 	}, -- 13
 	{ -- 14
-		2999, -- 14
-		1687, -- 14
-		4.6666669845581 -- 14
+		1162, -- 14
+		656, -- 14
+		4.1666669845581 -- 14
 	}, -- 14
 	{ -- 15
-		2928, -- 15
-		1650, -- 15
-		4.0 -- 15
+		2999, -- 15
+		1687, -- 15
+		4.6666669845581 -- 15
 	}, -- 15
 	{ -- 16
-		2926, -- 16
+		2928, -- 16
 		1650, -- 16
-		1.5000001192093 -- 16
+		4.0 -- 16
 	}, -- 16
 	{ -- 17
-		2927, -- 17
-		1651, -- 17
+		2926, -- 17
+		1650, -- 17
 		1.5000001192093 -- 17
 	}, -- 17
 	{ -- 18
-		2926, -- 18
+		2927, -- 18
 		1651, -- 18
-		2.566666841507 -- 18
+		1.5000001192093 -- 18
 	}, -- 18
 	{ -- 19
-		2927, -- 19
-		1650, -- 19
-		1.6666667461395 -- 19
+		2926, -- 19
+		1651, -- 19
+		2.566666841507 -- 19
 	}, -- 19
 	{ -- 20
-		2903, -- 20
-		1629, -- 20
-		1.5000001192093 -- 20
+		2927, -- 20
+		1650, -- 20
+		1.6666667461395 -- 20
 	}, -- 20
 	{ -- 21
-		3006, -- 21
-		1689, -- 21
-		5.0000004768372 -- 21
+		2903, -- 21
+		1629, -- 21
+		1.5000001192093 -- 21
 	}, -- 21
 	{ -- 22
-		2907, -- 22
-		1632, -- 22
-		0.66666668653488 -- 22
+		3006, -- 22
+		1689, -- 22
+		5.0000004768372 -- 22
 	}, -- 22
 	{ -- 23
-		2999, -- 23
-		1686, -- 23
-		2.0 -- 23
+		2907, -- 23
+		1632, -- 23
+		0.66666668653488 -- 23
 	}, -- 23
 	{ -- 24
-		2907, -- 24
-		1631, -- 24
-		1.0666667222977 -- 24
+		2999, -- 24
+		1686, -- 24
+		2.0 -- 24
 	}, -- 24
 	{ -- 25
 		2907, -- 25
 		1631, -- 25
-		3, -- 25
-		1.0 -- 25
+		1.0666667222977 -- 25
 	}, -- 25
 	{ -- 26
 		2907, -- 26
 		1631, -- 26
-		5.3333334922791 -- 26
+		3, -- 26
+		1.0 -- 26
 	}, -- 26
 	{ -- 27
-		2998, -- 27
-		1685, -- 27
-		1.1666667461395 -- 27
+		2907, -- 27
+		1631, -- 27
+		5.3333334922791 -- 27
 	}, -- 27
 	{ -- 28
-		3353, -- 28
-		1882, -- 28
-		4.0 -- 28
+		2998, -- 28
+		1685, -- 28
+		1.1666667461395 -- 28
 	}, -- 28
 	{ -- 29
-		2918, -- 29
-		1646, -- 29
-		6.6666669845581 -- 29
-	} -- 29
-} -- 3
-local scaleView -- 32
-scaleView = function(self, index) -- 32
-	local width, height, time, target -- 33
-	do -- 33
-		local _obj_0 = PVInfo[index] -- 33
-		width, height, time, target = _obj_0[1], _obj_0[2], _obj_0[3], _obj_0[4] -- 33
-		if target == nil then -- 33
-			target = time -- 33
-		end -- 33
-	end -- 33
-	local w, h -- 34
+		3353, -- 29
+		1882, -- 29
+		4.0 -- 29
+	}, -- 29
+	{ -- 30
+		2918, -- 30
+		1646, -- 30
+		6.6666669845581 -- 30
+	} -- 30
+} -- 4
+local scaleView -- 33
+scaleView = function(self, index) -- 33
+	local width, height, time, target -- 34
 	do -- 34
-		local _obj_0 = View.size -- 34
-		w, h = _obj_0.width, _obj_0.height -- 34
+		local _obj_0 = PVInfo[index] -- 34
+		width, height, time, target = _obj_0[1], _obj_0[2], _obj_0[3], _obj_0[4] -- 34
+		if target == nil then -- 34
+			target = time -- 34
+		end -- 34
 	end -- 34
-	local scale -- 35
-	if (w / h) > (width / height) then -- 35
-		scale = h / height -- 36
-	else -- 38
-		scale = w / width -- 38
+	local w, h -- 35
+	do -- 35
+		local _obj_0 = View.size -- 35
+		w, h = _obj_0.width, _obj_0.height -- 35
 	end -- 35
-	self.scaleX = scale -- 39
-	self.scaleY = scale -- 40
-	self.speed = time * 1.25 / target -- 41
-end -- 32
-local playOP -- 43
-playOP = function() -- 43
-	Director.clearColor = Color(0xff000000) -- 44
-	local start = 1 -- 45
-	Cache:loadAsync("spine:PV1/PV1_" .. tostring(start)) -- 46
-	for i = start, #PVInfo do -- 47
-		if (8 == i or 19 == i) then -- 48
-			goto _continue_0 -- 48
-		end -- 48
-		local playEnded = false -- 49
-		local nextViewLoaded = false -- 50
-		local playable = Playable("spine:PV1/PV1_" .. tostring(i)) -- 51
-		playable:play("animation", i == 1) -- 52
-		playable:gslot("AppChange", function(settingName) -- 53
-			if settingName == "Size" then -- 53
-				return scaleView(playable, i) -- 53
-			end -- 53
-		end) -- 53
-		scaleView(playable, i) -- 54
-		if i + 1 <= #PVInfo then -- 55
-			playable:schedule(once(function() -- 56
-				Cache:loadAsync("spine:PV1/PV1_" .. tostring(i + 1)) -- 57
-				nextViewLoaded = true -- 58
-			end)) -- 56
-		else -- 60
-			nextViewLoaded = true -- 60
-		end -- 55
-		playable:addTo(Director.entry) -- 61
-		Cache:unload("PV1/PV1_" .. tostring(i) .. ".atlas") -- 62
-		Cache:unload("spine:PV1/PV1_" .. tostring(i)) -- 63
-		if i == 1 then -- 64
-			Audio:playStream("Music/L·S·Depart.mp3", true) -- 65
-			sleep(3) -- 66
-			local Story = require("UI.Story") -- 67
-			local story -- 68
-			do -- 68
-				local _with_0 = Story("Tutorial/Dialog/startUp.yarn") -- 68
-				_with_0:slot("Ended", function() -- 69
-					playEnded = true -- 69
-				end) -- 69
-				_with_0:showAsync() -- 70
-				_with_0:addTo(Director.ui3D) -- 71
-				story = _with_0 -- 68
-			end -- 68
-			wait(function() -- 72
-				return playEnded -- 72
-			end) -- 72
-			Audio:playStream("Music/L·S·DepartII.mp3", false, 1) -- 73
-			sleep(2) -- 74
-		else -- 76
-			playable:slot("end", function() -- 76
-				playEnded = true -- 76
-			end) -- 76
-			playable:slot("AnimationEnd", function() -- 77
+	local scale -- 36
+	if (w / h) > (width / height) then -- 36
+		scale = h / height -- 37
+	else -- 39
+		scale = w / width -- 39
+	end -- 36
+	self.scaleX = scale -- 40
+	self.scaleY = scale -- 41
+	self.speed = time * 1.25 / target -- 42
+end -- 33
+local playOP -- 44
+playOP = function() -- 44
+	Director.clearColor = Color(0xff000000) -- 45
+	local start = 1 -- 46
+	Cache:loadAsync("spine:PV1/PV1_" .. tostring(start)) -- 47
+	for i = start, #PVInfo do -- 48
+		if (8 == i or 19 == i) then -- 49
+			goto _continue_0 -- 49
+		end -- 49
+		local playEnded = false -- 50
+		local nextViewLoaded = false -- 51
+		local playable = Playable("spine:PV1/PV1_" .. tostring(i)) -- 52
+		playable:play("animation", i == 1) -- 53
+		playable:gslot("AppChange", function(settingName) -- 54
+			if settingName == "Size" then -- 54
+				return scaleView(playable, i) -- 54
+			end -- 54
+		end) -- 54
+		scaleView(playable, i) -- 55
+		if i + 1 <= #PVInfo then -- 56
+			playable:schedule(once(function() -- 57
+				Cache:loadAsync("spine:PV1/PV1_" .. tostring(i + 1)) -- 58
+				nextViewLoaded = true -- 59
+			end)) -- 57
+		else -- 61
+			nextViewLoaded = true -- 61
+		end -- 56
+		playable:addTo(Director.entry) -- 62
+		Cache:unload("PV1/PV1_" .. tostring(i) .. ".atlas") -- 63
+		Cache:unload("spine:PV1/PV1_" .. tostring(i)) -- 64
+		if i == 1 then -- 65
+			Audio:playStream("Music/L·S·Depart.mp3", true) -- 66
+			sleep(3) -- 67
+			local Story = require("UI.Story") -- 68
+			local story -- 69
+			do -- 69
+				local _with_0 = Story("Tutorial/Dialog/startUp.yarn") -- 69
+				_with_0:slot("Ended", function() -- 70
+					playEnded = true -- 70
+				end) -- 70
+				_with_0:showAsync() -- 71
+				_with_0:addTo(Director.ui3D) -- 72
+				story = _with_0 -- 69
+			end -- 69
+			wait(function() -- 73
+				return playEnded -- 73
+			end) -- 73
+			Audio:playStream("Music/L·S·DepartII.mp3", false, 1) -- 74
+			sleep(2) -- 75
+		else -- 77
+			playable:slot("end", function() -- 77
 				playEnded = true -- 77
 			end) -- 77
-		end -- 64
-		wait(function() -- 78
-			return playEnded and nextViewLoaded -- 78
-		end) -- 78
-		if i + 1 <= #PVInfo then -- 79
-			playable:removeFromParent() -- 80
-			Cache:removeUnused("Texture") -- 81
-		end -- 79
-		::_continue_0:: -- 48
-	end -- 47
-end -- 43
-_module_0 = playOP -- 83
+			playable:slot("AnimationEnd", function() -- 78
+				playEnded = true -- 78
+			end) -- 78
+		end -- 65
+		wait(function() -- 79
+			return playEnded and nextViewLoaded -- 79
+		end) -- 79
+		if i + 1 <= #PVInfo then -- 80
+			playable:removeFromParent() -- 81
+			Cache:removeUnused("Texture") -- 82
+		end -- 80
+		::_continue_0:: -- 49
+	end -- 48
+end -- 44
+_module_0 = playOP -- 84
 return _module_0 -- 1

@@ -3,6 +3,8 @@ _ENV = Dora(
 	Dora.Platformer.Decision
 	Dora.ImGui
 )
+import global
+
 if scriptPath := Path\getScriptPath ...
 	scriptPath = Path\getPath scriptPath
 	for path in *{

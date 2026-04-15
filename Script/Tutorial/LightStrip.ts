@@ -7,12 +7,12 @@ export function LightStrip(this: void, startPoint: Vec2.Type, targetNode: Node.T
 	if (targetNode.parent) {
 		node.addTo(targetNode.parent, targetNode.order);
 	}
-	let target: Node.Type | null = targetNode;
+	let target: Node.Type | undefined = targetNode;
 	targetNode.slot(Slot.Cleanup, () => {
-		target = null;
+		target = undefined;
 	});
 	targetNode.slot("StopStrip", () => {
-		target = null;
+		target = undefined;
 	});
 	let stopPoint = target.position;
 	let current = 0;

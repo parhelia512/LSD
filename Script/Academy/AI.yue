@@ -2,6 +2,7 @@ _ENV = Dora(
 	Dora.Platformer
 	Dora.Platformer.Decision
 )
+import global
 
 export default ->
 	store: Store = Data

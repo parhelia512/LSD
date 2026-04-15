@@ -1,4 +1,5 @@
 _ENV = Dora
+import global
 import "UI.View.Story"
 import "UI.StoryFigure"
 import "UI.Answer"

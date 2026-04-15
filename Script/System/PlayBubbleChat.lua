@@ -1,99 +1,101 @@
 -- [yue]: Script/System/PlayBubbleChat.yue
-local type = _G.type -- 1
-local Group = Dora.Group -- 1
-local thread = Dora.thread -- 1
-local emit = Dora.emit -- 1
-local tostring = _G.tostring -- 1
-local sleep = Dora.sleep -- 1
-local math = _G.math -- 1
 local _module_0 = nil -- 1
-local Bubble = require("UI.Bubble") -- 3
-local YarnRunner = require("YarnRunner") -- 4
-local Config = require("Data.Config") -- 5
-local Command = require("System.Command") -- 6
-local u8 = require("utf-8") -- 7
-local getCharName -- 9
-getCharName = function(current) -- 9
-	if current.marks then -- 10
-		local _list_0 = current.marks -- 11
-		for _index_0 = 1, #_list_0 do -- 11
-			local mark = _list_0[_index_0] -- 11
-			local _type_0 = type(mark) -- 12
-			local _tab_0 = "table" == _type_0 or "userdata" == _type_0 -- 12
-			if _tab_0 then -- 12
-				local attr = mark.name -- 12
-				local name -- 12
-				do -- 12
-					local _obj_0 = mark.attrs -- 12
-					local _type_1 = type(_obj_0) -- 12
-					if "table" == _type_1 or "userdata" == _type_1 then -- 12
-						name = _obj_0.name -- 12
-					end -- 12
-				end -- 12
-				local id -- 12
-				do -- 12
-					local _obj_0 = mark.attrs -- 12
-					local _type_1 = type(_obj_0) -- 12
-					if "table" == _type_1 or "userdata" == _type_1 then -- 12
-						id = _obj_0.id -- 12
-					end -- 12
-				end -- 12
-				if name == nil then -- 12
-					name = '' -- 12
-				end -- 12
-				if id == nil then -- 12
-					id = '' -- 12
-				end -- 12
-				if attr ~= nil then -- 12
-					if ("char" == attr or "Character" == attr) then -- 13
-						if id == "char" then -- 14
-							id = Config.char -- 14
-						end -- 14
-						return name, id -- 15
+local _ENV = Dora -- 1
+local require <const> = require -- 2
+local type <const> = type -- 2
+local Group <const> = Group -- 2
+local thread <const> = thread -- 2
+local emit <const> = emit -- 2
+local tostring <const> = tostring -- 2
+local sleep <const> = sleep -- 2
+local math <const> = math -- 2
+local Bubble = require("UI.Bubble") -- 4
+local YarnRunner = require("YarnRunner") -- 5
+local Config = require("Data.Config") -- 6
+local Command = require("System.Command") -- 7
+local u8 = require("utf-8") -- 8
+local getCharName -- 10
+getCharName = function(current) -- 10
+	if current.marks then -- 11
+		local _list_0 = current.marks -- 12
+		for _index_0 = 1, #_list_0 do -- 12
+			local mark = _list_0[_index_0] -- 12
+			local _type_0 = type(mark) -- 13
+			local _tab_0 = "table" == _type_0 or "userdata" == _type_0 -- 13
+			if _tab_0 then -- 13
+				local attr = mark.name -- 13
+				local name -- 13
+				do -- 13
+					local _obj_0 = mark.attrs -- 13
+					local _type_1 = type(_obj_0) -- 13
+					if "table" == _type_1 or "userdata" == _type_1 then -- 13
+						name = _obj_0.name -- 13
 					end -- 13
-				end -- 12
-			end -- 12
-		end -- 11
-	end -- 10
-	return '', '' -- 16
-end -- 9
-_module_0 = function(file) -- 18
-	local runner = YarnRunner(file, "Start", Config, Command) -- 19
-	local unitGroup = Group({ -- 20
-		"unit", -- 20
-		"name" -- 20
-	}) -- 20
-	return thread(function() -- 21
-		repeat -- 21
-			local itemType, result = runner:advance() -- 22
-			if "Text" == itemType then -- 23
-				local name, characterId = getCharName(result) -- 24
-				local text = result.text -- 25
-				local entity = unitGroup:find(function(self) -- 26
-					return self.name == characterId -- 26
-				end) -- 26
-				if entity then -- 26
-					local unit = entity.unit -- 27
-					do -- 28
-						local bubble = unit:getChildByTag("bubble") -- 28
-						if bubble then -- 28
-							bubble:removeFromParent() -- 29
-						end -- 28
-					end -- 28
-					unit:addChild(Bubble({ -- 30
-						text = text -- 30
-					})) -- 30
-					emit("MessageBox.Add", { -- 31
-						title = "对话", -- 31
-						special = false, -- 31
-						text = tostring(name) .. "：" .. tostring(text) -- 31
-					}) -- 31
-					sleep(math.max(1, 0.15 * u8.len(text))) -- 32
-				end -- 26
-			else -- 34
-				return -- 34
-			end -- 23
-		until false -- 21
-	end) -- 21
-end -- 18
+				end -- 13
+				local id -- 13
+				do -- 13
+					local _obj_0 = mark.attrs -- 13
+					local _type_1 = type(_obj_0) -- 13
+					if "table" == _type_1 or "userdata" == _type_1 then -- 13
+						id = _obj_0.id -- 13
+					end -- 13
+				end -- 13
+				if name == nil then -- 13
+					name = '' -- 13
+				end -- 13
+				if id == nil then -- 13
+					id = '' -- 13
+				end -- 13
+				if attr ~= nil then -- 13
+					if ("char" == attr or "Character" == attr) then -- 14
+						if id == "char" then -- 15
+							id = Config.char -- 15
+						end -- 15
+						return name, id -- 16
+					end -- 14
+				end -- 13
+			end -- 13
+		end -- 12
+	end -- 11
+	return '', '' -- 17
+end -- 10
+_module_0 = function(file) -- 19
+	local runner = YarnRunner(file, "Start", Config, Command) -- 20
+	local unitGroup = Group({ -- 21
+		"unit", -- 21
+		"name" -- 21
+	}) -- 21
+	return thread(function() -- 22
+		repeat -- 22
+			local itemType, result = runner:advance() -- 23
+			if "Text" == itemType then -- 24
+				local name, characterId = getCharName(result) -- 25
+				local text = result.text -- 26
+				local entity = unitGroup:find(function(self) -- 27
+					return self.name == characterId -- 27
+				end) -- 27
+				if entity then -- 27
+					local unit = entity.unit -- 28
+					do -- 29
+						local bubble = unit:getChildByTag("bubble") -- 29
+						if bubble then -- 29
+							bubble:removeFromParent() -- 30
+						end -- 29
+					end -- 29
+					unit:addChild(Bubble({ -- 31
+						text = text -- 31
+					})) -- 31
+					emit("MessageBox.Add", { -- 32
+						title = "对话", -- 32
+						special = false, -- 32
+						text = tostring(name) .. "：" .. tostring(text) -- 32
+					}) -- 32
+					sleep(math.max(1, 0.15 * u8.len(text))) -- 33
+				end -- 27
+			else -- 35
+				return -- 35
+			end -- 24
+		until false -- 22
+	end) -- 22
+end -- 19
 return _module_0 -- 1

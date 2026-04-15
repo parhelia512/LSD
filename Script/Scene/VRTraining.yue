@@ -1,4 +1,5 @@
 _ENV = Dora Dora.Platformer
+import global
 import "Utils" as :Struct
 import "utf-8" as u8
 

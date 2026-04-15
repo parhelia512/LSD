@@ -1,22 +1,24 @@
 -- [yue]: UI/Bubble.yue
-local Class = Dora.Class -- 1
-local once = Dora.once -- 1
-local math = _G.math -- 1
-local utf8 = _G.utf8 -- 1
-local sleep = Dora.sleep -- 1
-local Opacity = Dora.Opacity -- 1
 local _module_0 = nil -- 1
-local Bubble = require("UI.View.Bubble") -- 3
-_module_0 = Class(Bubble, { -- 6
-	__init = function(self, args) -- 6
-		local text = args.text -- 7
-		self.tag = "bubble" -- 8
-		return self:schedule(once(function() -- 9
-			local time = 3 + math.max(0.15 * utf8.len(text, 1)) -- 10
-			sleep(time) -- 11
-			self:perform(Opacity(0.5, 1, 0)) -- 12
-			return self:removeFromParent() -- 13
-		end)) -- 9
-	end -- 6
-}) -- 5
+local _ENV = Dora -- 1
+local require <const> = require -- 2
+local Class <const> = Class -- 2
+local once <const> = once -- 2
+local math <const> = math -- 2
+local utf8 <const> = utf8 -- 2
+local sleep <const> = sleep -- 2
+local Opacity <const> = Opacity -- 2
+local Bubble = require("UI.View.Bubble") -- 4
+_module_0 = Class(Bubble, { -- 7
+	__init = function(self, args) -- 7
+		local text = args.text -- 8
+		self.tag = "bubble" -- 9
+		return self:schedule(once(function() -- 10
+			local time = 3 + math.max(0.15 * utf8.len(text, 1)) -- 11
+			sleep(time) -- 12
+			self:perform(Opacity(0.5, 1, 0)) -- 13
+			return self:removeFromParent() -- 14
+		end)) -- 10
+	end -- 7
+}) -- 6
 return _module_0 -- 1

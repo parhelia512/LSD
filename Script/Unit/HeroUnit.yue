@@ -1,4 +1,5 @@
 _ENV = Dora Dora.Platformer
+import global
 store: Store = Data
 
 

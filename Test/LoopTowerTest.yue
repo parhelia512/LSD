@@ -1,4 +1,5 @@
 _ENV = Dora
+import global
 
 if scriptPath := Path\getScriptPath ...
 	scriptPath = Path\getPath scriptPath
