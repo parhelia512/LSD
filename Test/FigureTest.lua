@@ -1,4 +1,4 @@
--- [yue]: Test/FigureTest.yue
+-- [yue]: LSD/Test/FigureTest.yue
 local _ENV = Dora(Dora.ImGui) -- 1
 local Path <const> = Path -- 2
 local Content <const> = Content -- 2
@@ -74,36 +74,35 @@ return Director.entry:addChild((function() -- 45
 		"AlwaysAutoResize", -- 48
 		"NoSavedSettings", -- 49
 		"NoFocusOnAppearing", -- 50
-		"NoNav", -- 51
-		"NoMove" -- 52
+		"NoMove" -- 51
 	} -- 46
-	_with_0:schedule(function() -- 53
-		local width, height -- 54
-		do -- 54
-			local _obj_0 = App.visualSize -- 54
-			width, height = _obj_0.width, _obj_0.height -- 54
-		end -- 54
-		SetNextWindowBgAlpha(0.35) -- 55
-		SetNextWindowPos(Vec2(width - 10, 10), "Always", Vec2(1, 0)) -- 56
-		SetNextWindowSize(Vec2(100, 0), "FirstUseEver") -- 57
-		return Begin("FigureTest", windowFlags, function() -- 58
-			Text("Figure") -- 59
-			Separator() -- 60
-			local changed -- 61
-			changed, currentFigure = Combo("Change", currentFigure, figures) -- 61
-			if changed then -- 62
-				spine:removeFromParent() -- 63
-				do -- 64
-					local _with_1 = Spine(figures[currentFigure]) -- 64
-					_with_1.look = "full" -- 65
-					_with_1:play("idle", true) -- 66
-					_with_1.scaleX = 0.21 -- 67
-					_with_1.scaleY = 0.21 -- 68
-					spine = _with_1 -- 64
-				end -- 64
-				return roleStats.figure:addChild(spine) -- 69
-			end -- 62
-		end) -- 58
-	end) -- 53
+	_with_0:schedule(function() -- 52
+		local width, height -- 53
+		do -- 53
+			local _obj_0 = App.visualSize -- 53
+			width, height = _obj_0.width, _obj_0.height -- 53
+		end -- 53
+		SetNextWindowBgAlpha(0.35) -- 54
+		SetNextWindowPos(Vec2(width - 10, 10), "Always", Vec2(1, 0)) -- 55
+		SetNextWindowSize(Vec2(100, 0), "FirstUseEver") -- 56
+		return Begin("FigureTest", windowFlags, function() -- 57
+			Text("Figure") -- 58
+			Separator() -- 59
+			local changed -- 60
+			changed, currentFigure = Combo("Change", currentFigure, figures) -- 60
+			if changed then -- 61
+				spine:removeFromParent() -- 62
+				do -- 63
+					local _with_1 = Spine(figures[currentFigure]) -- 63
+					_with_1.look = "full" -- 64
+					_with_1:play("idle", true) -- 65
+					_with_1.scaleX = 0.21 -- 66
+					_with_1.scaleY = 0.21 -- 67
+					spine = _with_1 -- 63
+				end -- 63
+				return roleStats.figure:addChild(spine) -- 68
+			end -- 61
+		end) -- 57
+	end) -- 52
 	return _with_0 -- 45
 end)()) -- 45

@@ -48,7 +48,6 @@ Director.entry\addChild with Node!
 		* "AlwaysAutoResize"
 		* "NoSavedSettings"
 		* "NoFocusOnAppearing"
-		* "NoNav"
 		* "NoMove"
 	\schedule ->
 		:width, :height = App.visualSize
