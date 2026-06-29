@@ -1,4 +1,4 @@
--- [xml]: UI/PhoneSetting.xml
+-- [xml]: LSD/UI/PhoneSetting.xml
 return function(args) -- 1
 local _ENV = Dora(args) -- 1
 local node1 = Node() -- 2

@@ -1,4 +1,4 @@
--- [xml]: UI/BackButton.xml
+-- [xml]: LSD/UI/BackButton.xml
 return function(args) -- 1
 local _ENV = Dora(args) -- 1
 local node1 = Node() -- 1

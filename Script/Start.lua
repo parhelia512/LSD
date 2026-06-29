@@ -1,4 +1,4 @@
--- [yue]: Script/Start.yue
+-- [yue]: LSD/Script/Start.yue
 local _ENV = Dora -- 1
 local DB <const> = DB -- 2
 local Path <const> = Path -- 2

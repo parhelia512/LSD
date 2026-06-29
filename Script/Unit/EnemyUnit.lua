@@ -1,4 +1,4 @@
--- [yue]: Script/Unit/EnemyUnit.yue
+-- [yue]: LSD/Script/Unit/EnemyUnit.yue
 local _ENV = Dora(Dora.Platformer) -- 1
 local Data <const> = Data -- 2
 local Dictionary <const> = Dictionary -- 2

@@ -1,4 +1,4 @@
--- [yue]: Test/ChatTest.yue
+-- [yue]: LSD/Test/ChatTest.yue
 local _ENV = Dora -- 1
 local Path <const> = Path -- 2
 local Content <const> = Content -- 2

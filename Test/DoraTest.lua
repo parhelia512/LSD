@@ -1,4 +1,4 @@
--- [yue]: Test/DoraTest.yue
+-- [yue]: LSD/Test/DoraTest.yue
 local _ENV = Dora(Dora.ImGui) -- 1
 local Path <const> = Path -- 2
 local Content <const> = Content -- 2

@@ -1,4 +1,4 @@
--- [xml]: UI/MovingText.xml
+-- [xml]: LSD/UI/MovingText.xml
 return function(args) -- 1
 local _ENV = Dora(args) -- 1
 local clipNode1 = ClipNode() -- 1

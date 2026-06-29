@@ -1,4 +1,4 @@
--- [xml]: UI/TacticAction.xml
+-- [xml]: LSD/UI/TacticAction.xml
 return function(args) -- 1
 local _ENV = Dora(args) -- 1
 local node1 = Node() -- 2

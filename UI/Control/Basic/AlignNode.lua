@@ -1,4 +1,4 @@
--- [yue]: UI/Control/Basic/AlignNode.yue
+-- [yue]: LSD/UI/Control/Basic/AlignNode.yue
 local _module_0 = nil -- 1
 local _ENV = Dora -- 9
 local Class <const> = Class -- 10

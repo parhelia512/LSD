@@ -1,4 +1,4 @@
--- [xml]: UI/GearBox.xml
+-- [xml]: LSD/UI/GearBox.xml
 local ScrollArea = require("UI.Control.Basic.ScrollArea") -- 2
 local GearTabButton = require("UI.GearTabButton") -- 3
 local GearButton = require("UI.GearButton") -- 4

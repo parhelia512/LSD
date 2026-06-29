@@ -1,4 +1,4 @@
--- [xml]: UI/RoleTab.xml
+-- [xml]: LSD/UI/RoleTab.xml
 local MovingText = require("UI.MovingText") -- 2
 return function(args) -- 1
 local _ENV = Dora(args) -- 1

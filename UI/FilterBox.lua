@@ -1,4 +1,4 @@
--- [xml]: UI/FilterBox.xml
+-- [xml]: LSD/UI/FilterBox.xml
 local MovingText = require("UI.MovingText") -- 2
 local GearTabButton = require("UI.GearTabButton") -- 3
 return function(args) -- 1

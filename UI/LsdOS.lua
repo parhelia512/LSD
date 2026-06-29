@@ -1,4 +1,4 @@
--- [xml]: UI/LsdOS.xml
+-- [xml]: LSD/UI/LsdOS.xml
 local AlignNode = require("UI.Control.Basic.AlignNode") -- 2
 return function(args) -- 1
 local _ENV = Dora(args) -- 1

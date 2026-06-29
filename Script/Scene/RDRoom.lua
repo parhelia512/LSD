@@ -1,4 +1,4 @@
--- [yue]: Script/Scene/RDRoom.yue
+-- [yue]: LSD/Script/Scene/RDRoom.yue
 local _module_0 = nil -- 1
 local _ENV = Dora(Dora.Platformer) -- 1
 local require <const> = require -- 2

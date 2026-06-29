@@ -1,4 +1,4 @@
--- [yue]: UI/Bubble.yue
+-- [yue]: LSD/UI/Bubble.yue
 local _module_0 = nil -- 1
 local _ENV = Dora -- 1
 local require <const> = require -- 2

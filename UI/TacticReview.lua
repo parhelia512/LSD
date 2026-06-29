@@ -1,4 +1,4 @@
--- [xml]: UI/TacticReview.xml
+-- [xml]: LSD/UI/TacticReview.xml
 local FixedLabel = require("UI.Control.Basic.FixedLabel") -- 2
 return function(args) -- 1
 local _ENV = Dora(args) -- 1

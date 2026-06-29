@@ -1,4 +1,4 @@
--- [xml]: UI/PhoneTabButton.xml
+-- [xml]: LSD/UI/PhoneTabButton.xml
 return function(args) -- 1
 local _ENV = Dora(args) -- 1
 local node1 = Node() -- 2

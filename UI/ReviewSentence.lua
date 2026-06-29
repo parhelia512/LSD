@@ -1,4 +1,4 @@
--- [xml]: UI/ReviewSentence.xml
+-- [xml]: LSD/UI/ReviewSentence.xml
 return function(args) -- 1
 local _ENV = Dora(args) -- 1
 local node = Node() -- 2

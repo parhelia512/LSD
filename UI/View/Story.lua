@@ -1,4 +1,4 @@
--- [xml]: UI/View/Story.xml
+-- [xml]: LSD/UI/View/Story.xml
 local SolidRect = require("UI.View.Shape.SolidRect") -- 2
 local AlignNode = require("UI.Control.Basic.AlignNode") -- 3
 local ScrollArea = require("UI.Control.Basic.ScrollArea") -- 4

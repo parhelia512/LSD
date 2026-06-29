@@ -1,4 +1,4 @@
--- [yue]: Script/Scene/TrainB.yue
+-- [yue]: LSD/Script/Scene/TrainB.yue
 local _module_0 = nil -- 1
 local _ENV = Dora -- 1
 local require <const> = require -- 2

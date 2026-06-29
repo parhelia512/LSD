@@ -1,4 +1,4 @@
--- [yue]: UI/HUDMove.yue
+-- [yue]: LSD/UI/HUDMove.yue
 local _module_0 = nil -- 1
 local _ENV = Dora -- 1
 local require <const> = require -- 2
