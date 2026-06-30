@@ -1,4 +1,4 @@
--- [xml]: LSD/UI/MissionFail.xml
+-- [xml]: UI/MissionFail.xml
 local SolidRect = require("UI.View.Shape.SolidRect") -- 2
 local AlignNode = require("UI.Control.Basic.AlignNode") -- 3
 local MovingText = require("UI.MovingText") -- 4

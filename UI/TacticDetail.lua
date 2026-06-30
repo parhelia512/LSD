@@ -1,4 +1,4 @@
--- [xml]: LSD/UI/TacticDetail.xml
+-- [xml]: UI/TacticDetail.xml
 local ScrollArea = require("UI.Control.Basic.ScrollArea") -- 2
 return function(args) -- 1
 local _ENV = Dora(args) -- 1

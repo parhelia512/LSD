@@ -1,4 +1,4 @@
--- [xml]: LSD/UI/View/MessageBox.xml
+-- [xml]: UI/View/MessageBox.xml
 local ScrollArea = require("UI.Control.Basic.ScrollArea") -- 2
 local Message = require("UI.Message") -- 3
 return function(args) -- 1

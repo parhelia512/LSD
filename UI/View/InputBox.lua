@@ -1,4 +1,4 @@
--- [xml]: LSD/UI/View/InputBox.xml
+-- [xml]: UI/View/InputBox.xml
 local SolidRect = require("UI.View.Shape.SolidRect") -- 3
 local AlignNode = require("UI.Control.Basic.AlignNode") -- 4
 local H <const> = 1563 -- 5

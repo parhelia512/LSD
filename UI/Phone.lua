@@ -1,4 +1,4 @@
--- [xml]: LSD/UI/Phone.xml
+-- [xml]: UI/Phone.xml
 local SolidRect = require("UI.View.Shape.SolidRect") -- 2
 local AlignNode = require("UI.Control.Basic.AlignNode") -- 3
 local PhoneTabButton = require("UI.PhoneTabButton") -- 4

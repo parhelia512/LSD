@@ -1,4 +1,4 @@
--- [xml]: LSD/UI/TrainingBox.xml
+-- [xml]: UI/TrainingBox.xml
 local ScrollArea = require("UI.Control.Basic.ScrollArea") -- 2
 local GearTabButton = require("UI.GearTabButton") -- 3
 local TrainingButton = require("UI.TrainingButton") -- 4

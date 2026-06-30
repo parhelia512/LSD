@@ -1,4 +1,4 @@
--- [xml]: LSD/UI/View/HUDMove.xml
+-- [xml]: UI/View/HUDMove.xml
 return function(args) -- 1
 local _ENV = Dora(args) -- 1
 local menu = Menu() -- 1

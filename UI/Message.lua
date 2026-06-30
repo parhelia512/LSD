@@ -1,4 +1,4 @@
--- [xml]: LSD/UI/Message.xml
+-- [xml]: UI/Message.xml
 return function(args) -- 1
 local _ENV = Dora(args) -- 1
 local item = Node() -- 2

@@ -1,4 +1,4 @@
--- [xml]: LSD/UI/PhoneMessageTab.xml
+-- [xml]: UI/PhoneMessageTab.xml
 local Circle = require("UI.View.Shape.Circle") -- 2
 return function(args) -- 1
 local _ENV = Dora(args) -- 1

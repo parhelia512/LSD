@@ -1,4 +1,4 @@
--- [yue]: LSD/Test/SpineTest.yue
+-- [yue]: Test/SpineTest.yue
 local _ENV = Dora(Dora.Platformer, Dora.Platformer.Decision, Dora.ImGui) -- 1
 local Path <const> = Path -- 6
 local Content <const> = Content -- 6

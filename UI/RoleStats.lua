@@ -1,4 +1,4 @@
--- [xml]: LSD/UI/RoleStats.xml
+-- [xml]: UI/RoleStats.xml
 local AlignNode = require("UI.Control.Basic.AlignNode") -- 2
 local ScrollArea = require("UI.Control.Basic.ScrollArea") -- 3
 local CDE = require("UI.CDE") -- 4

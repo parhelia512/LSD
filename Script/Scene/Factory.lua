@@ -1,4 +1,4 @@
--- [yue]: LSD/Script/Scene/Factory.yue
+-- [yue]: Script/Scene/Factory.yue
 local _module_0 = nil -- 1
 local _ENV = Dora(Dora.Platformer) -- 1
 local Vec2 <const> = Vec2 -- 2

@@ -1,4 +1,4 @@
--- [yue]: LSD/Script/Control.yue
+-- [yue]: Script/Control.yue
 local _ENV = Dora(Dora.Platformer) -- 1
 local require <const> = require -- 2
 local Data <const> = Data -- 2

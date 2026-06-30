@@ -1,4 +1,4 @@
--- [xml]: LSD/UI/Formation.xml
+-- [xml]: UI/Formation.xml
 local AlignNode = require("UI.Control.Basic.AlignNode") -- 2
 local FormationRole = require("UI.FormationRole") -- 3
 local GearBox = require("UI.GearBox") -- 4

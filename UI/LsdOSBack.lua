@@ -1,4 +1,4 @@
--- [xml]: LSD/UI/LsdOSBack.xml
+-- [xml]: UI/LsdOSBack.xml
 local AlignNode = require("UI.Control.Basic.AlignNode") -- 2
 local H <const> = 1563 -- 3
 return function(args) -- 1

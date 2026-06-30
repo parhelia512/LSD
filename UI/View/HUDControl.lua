@@ -1,4 +1,4 @@
--- [xml]: LSD/UI/View/HUDControl.xml
+-- [xml]: UI/View/HUDControl.xml
 local AlignNode = require("UI.Control.Basic.AlignNode") -- 2
 local Skill = require("UI.Skill") -- 3
 local CmdButtonL = require("UI.CmdButtonL") -- 4

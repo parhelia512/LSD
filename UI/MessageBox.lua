@@ -1,4 +1,4 @@
--- [yue]: LSD/UI/MessageBox.yue
+-- [yue]: UI/MessageBox.yue
 local _module_0 = nil -- 1
 local _ENV = Dora -- 1
 local require <const> = require -- 2

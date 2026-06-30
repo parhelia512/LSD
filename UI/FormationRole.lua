@@ -1,4 +1,4 @@
--- [xml]: LSD/UI/FormationRole.xml
+-- [xml]: UI/FormationRole.xml
 local figureDefs = { -- 3
 charF = {x = 572, y = -492.5, scale = 0.44}, -- 4
 moling = {x = 235, y = -151.5, scale = 0.37}, -- 5

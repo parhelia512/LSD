@@ -1,4 +1,4 @@
--- [yue]: LSD/Script/Scene/VRTraining.yue
+-- [yue]: Script/Scene/VRTraining.yue
 local _module_0 = nil -- 1
 local _ENV = Dora(Dora.Platformer) -- 1
 local require <const> = require -- 2

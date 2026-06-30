@@ -1,4 +1,4 @@
--- [xml]: LSD/UI/FullScreenMask.xml
+-- [xml]: UI/FullScreenMask.xml
 local SolidRect = require("UI.View.Shape.SolidRect") -- 2
 local AlignNode = require("UI.Control.Basic.AlignNode") -- 3
 return function(args) -- 1

@@ -1,4 +1,4 @@
--- [xml]: LSD/UI/ReviewButton.xml
+-- [xml]: UI/ReviewButton.xml
 return function(args) -- 1
 local _ENV = Dora(args) -- 1
 local node1 = Node() -- 1

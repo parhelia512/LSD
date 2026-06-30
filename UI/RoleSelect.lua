@@ -1,4 +1,4 @@
--- [xml]: LSD/UI/RoleSelect.xml
+-- [xml]: UI/RoleSelect.xml
 local MovingText = require("UI.MovingText") -- 2
 return function(args) -- 1
 local _ENV = Dora(args) -- 1

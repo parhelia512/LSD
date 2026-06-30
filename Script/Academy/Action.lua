@@ -1,4 +1,4 @@
--- [yue]: LSD/Script/Academy/Action.yue
+-- [yue]: Script/Academy/Action.yue
 local _module_0 = nil -- 1
 local _ENV = Dora(Dora.Platformer) -- 1
 local Data <const> = Data -- 2

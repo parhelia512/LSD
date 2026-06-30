@@ -1,4 +1,4 @@
--- [yue]: LSD/Script/Academy/Map.yue
+-- [yue]: Script/Academy/Map.yue
 local _module_0 = { } -- 1
 local Data = require("Platformer").Data -- 1
 local routes = { -- 5
