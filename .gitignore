@@ -54,5 +54,4 @@ DerivedData/
 # Ignore vscode file
 .vscode/
 
-Spine/
 .agent/
